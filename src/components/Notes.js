@@ -1,6 +1,9 @@
+import Postit from './Postit'
+
 const Notes=()=>{
-    return <div className="notes"></div> 
+    return <container className="Notes">
     <Postit/>
+    </container> 
 };
 
 export default Notes;

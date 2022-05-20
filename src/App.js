@@ -1,5 +1,8 @@
+import Notes from './components/Notes'
 const App =()=>{
-  return (<p>Hello world</p>)
+  return (
+    <Notes/>
+  )
 };
 
 export default App;
