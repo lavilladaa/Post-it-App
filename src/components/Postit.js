@@ -2,9 +2,9 @@ const Postit=()=>{
     return (
         <div className="postit">
 
-            <div className="note-title"> 
-            <textarea  className="note-text" placeholder="Title" maxlength="300"></textarea>
-            </div>
+            
+            <textarea  className="note-title" placeholder="Title" maxlength="50"></textarea>
+            
 
     
 

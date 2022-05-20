@@ -5,9 +5,9 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
@@ -16,7 +16,7 @@ code {
   background-color: #F7EF99;
   margin:15px;
   min-height: 200px;
-  padding: 1rem;
+  padding: 0rem;
  	display: flex;
 	flex-direction: column;
   /* To make the content equally spaced
@@ -25,9 +25,17 @@ code {
 	/* white-space: pre-wrap; */
 }
 
-.note-text {
-  background-color: #F7EF99;
-  padding: 1rem;
+.note-title{
+  /* -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  -ms-box-sizing: border-box;  */
+  /* To take the padding into account
+  and use widht=100%  */
+  box-sizing: border-box;
+  background-color: #FFFBD1;
+  font-size: 18px;
+  padding: 0.5rem;
+  margin: 0;
   display: flex;
 	flex-direction: column;
   border: none;
@@ -35,6 +43,6 @@ code {
   outline: none;
   /* To fit the textarea according
    to the container width */
-  width: 95%;
-  height: 200px;
+  width: 100%;
+  height: 40px;
 }
