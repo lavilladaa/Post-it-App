@@ -1,8 +1,9 @@
-import Postit from './Postit'
+// import Postit from './Postit'
+import NewPostit from "./NewPostit"
 
 const Notes=()=>{
     return <container className="Notes">
-    <Postit/>
+    <NewPostit/>
     </container> 
 };
 

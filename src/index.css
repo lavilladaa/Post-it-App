@@ -30,7 +30,7 @@
   -webkit-box-sizing: border-box; 
   -ms-box-sizing: border-box;  */
   /* To take the padding into account
-  and use widht=100%  */
+  and use width=100%  */
   box-sizing: border-box;
   background-color: #FFFBD1;
   font-size: 18px;
@@ -45,4 +45,44 @@
    to the container width */
   width: 100%;
   height: 40px;
+}
+
+.note-text {
+  box-sizing: border-box;
+  background-color: #F7EF99;
+  font-size: 16px;
+  padding: 0.5rem;
+  margin: 0;
+  display: flex;
+	flex-direction: column;
+  border: none;
+  resize: none;
+  outline: none;
+  /* To fit the textarea according
+   to the container width */
+  width: 100%;
+  height: 150px;
+
+}
+
+.note-footer {
+  display: flex;
+	flex-direction: row;
+  justify-content: space-between;
+  /* to align vertically */
+  align-items: center;
+  padding-left:0.5rem;
+  padding-right:0.5rem;
+  height:35px;
+ 
+}
+
+#date {
+  font-size:16px;
+}
+
+
+#save-button:hover{
+  cursor:pointer;
+  /* background-color: #7f7f81 */
 }
