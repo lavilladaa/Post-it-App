@@ -1,5 +1,6 @@
 import Notes from './components/Notes'
 const App =()=>{
+  
   return (
     <Notes/>
   )
