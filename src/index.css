@@ -45,6 +45,7 @@
    to the container width */
   width: 100%;
   height: 40px;
+  text-align: center;
 }
 
 .note-text {

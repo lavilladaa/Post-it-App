@@ -27,7 +27,9 @@ export default function Notes(){
 
 
     return (
+       
     <div className="Notes">
+        
     <NewPostit newNote={newNote}/>
         
     {/* to render all the notes created */}

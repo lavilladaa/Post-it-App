@@ -17,6 +17,12 @@ export default function Postit({note,title}){
     //     editNote(textEdit)
 
     // }
+    // In case the title hadn't been inserted
+    // the note will appear without the "Title..."
+    if (title===""){
+        title="  ";
+    }
+
     return (
         <div className="postit">
 

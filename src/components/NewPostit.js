@@ -26,16 +26,17 @@ export default function NewPostit ({newNote}){
 
     // To update the new note
     const saveNote=(event)=>{
-        if (text.trim() !== ""){
         // to prevent save a note in blank even if the user type spaces
+        if (text.trim() !== ""){
         event.preventDefault();
+
         newNote(text,title);
         // to reset the note 
         setText("");
         setTitle("");
-
         }
-         
+        
+    
     }
 
 
@@ -48,6 +49,7 @@ export default function NewPostit ({newNote}){
             placeholder="Title..." 
             maxlength="40"
             onChange={titleInfo}
+            value={title}
             >
 
             </textarea>
