@@ -1,20 +1,40 @@
 import React from "react";
+// import {useState} from "react";
 import { RiDeleteBin5Line } from 'react-icons/ri';
 import { FaEdit } from 'react-icons/fa';
 
-const Postit=({note})=>{
+export default function Postit({note,title}){
 
     const current_date=new Date();
+    // const [textEdit, setTextEdit]=useState();
+
+    // const noteNewInfo=(event)=>{
+    //     setTextEdit(event.target.value);
+        
+    // }
+
+    // const editText=(event)=>{
+    //     editNote(textEdit)
+
+    // }
     return (
         <div className="postit">
 
             
-            <textarea  className="note-title" placeholder="Title..." maxlength="40"></textarea>
+            <textarea  
+            className="note-title" 
+            placeholder="Title..." 
+            maxlength="40"
+            value={title}
+            >
+
+            </textarea>
 
             <textarea 
             className="note-text" 
             placeholder="My note..." 
             maxlength="150"
+            // onChange={noteNewInfo}
             // to place the text from the newPostit component
             value={note}
             >
@@ -30,6 +50,7 @@ const Postit=({note})=>{
                 color= "#7f7f81"
                 onMouseOver={({target})=>target.style.color="#535354"}
                 onMouseOut={({target})=>target.style.color="#7f7f81"}
+                // onClick={editText}
                 />
 
                 <RiDeleteBin5Line 
@@ -50,4 +71,3 @@ const Postit=({note})=>{
     )
 }
 
-export default Postit;

@@ -5,26 +5,35 @@ import{BiSave} from "react-icons/bi";
 import {useState} from "react"
 // import  Postit from "./Postit"
  
- const NewPostit =({newNote})=>{
+export default function NewPostit ({newNote}){
     
     const current_date=new Date();
     
     const [text,setText]=useState("");
+    const [title,setTitle]=useState("");
 
-    // To take te text in the note:
+    // To take the text in the note:
     const noteInfo=(event)=>{
         setText(event.target.value);
         
     }
 
+    // To take the title in the note:
+    const titleInfo=(event)=>{
+        setTitle(event.target.value);
+        
+    }
+
     // To update the new note
     const saveNote=(event)=>{
+        if (text.trim() !== ""){
         // to prevent save a note in blank even if the user type spaces
-         if (text.trim() !== ""){
         event.preventDefault();
-        newNote(text);
+        newNote(text,title);
         // to reset the note 
         setText("");
+        setTitle("");
+
         }
          
     }
@@ -34,7 +43,14 @@ import {useState} from "react"
     return (
         <div className="postit">
                         
-            <textarea  className="note-title" placeholder="Title..." maxlength="40"></textarea>
+            <textarea  
+            className="note-title" 
+            placeholder="Title..." 
+            maxlength="40"
+            onChange={titleInfo}
+            >
+
+            </textarea>
 
             <textarea 
             className="note-text" 
@@ -64,4 +80,4 @@ import {useState} from "react"
     )
 };
 
-export default NewPostit;
+ 
