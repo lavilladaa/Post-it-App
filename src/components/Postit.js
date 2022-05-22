@@ -1,5 +1,6 @@
 import React from "react";
 import { RiDeleteBin5Line } from 'react-icons/ri';
+import { FaEdit } from 'react-icons/fa';
 
 const Postit=({note})=>{
 
@@ -22,7 +23,24 @@ const Postit=({note})=>{
             
             <footer className="note-footer">
                 <p id="date">{current_date.toLocaleDateString()}</p>
-                <RiDeleteBin5Line size="1.5em"/>
+                <FaEdit
+                className="button" 
+                id="edit-button"
+                size="1.6em" 
+                color= "#7f7f81"
+                onMouseOver={({target})=>target.style.color="#535354"}
+                onMouseOut={({target})=>target.style.color="#7f7f81"}
+                />
+
+                <RiDeleteBin5Line 
+                className="button" 
+                size="1.7em" 
+                color= "#7f7f81"
+                onMouseOver={({target})=>target.style.color="#535354"}
+                onMouseOut={({target})=>target.style.color="#7f7f81"}
+                />
+
+
             
             </footer>
     

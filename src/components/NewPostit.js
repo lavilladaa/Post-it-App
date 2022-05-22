@@ -49,7 +49,8 @@ import {useState} from "react"
             <footer className="note-footer">
                 <p id="date">{current_date.toLocaleDateString()}</p>
                 <BiSave 
-                id="save-button" 
+                className="button" 
+                color= "#7f7f81"
                 size="1.7em" 
                 onMouseOver={({target})=>target.style.color="#535354"}
                 onMouseOut={({target})=>target.style.color="#7f7f81"}
