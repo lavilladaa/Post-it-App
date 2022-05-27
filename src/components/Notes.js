@@ -1,5 +1,6 @@
 import React from "react"
 import {useState} from "react"
+
 import NewPostit from "./NewPostit"
 import Postit from "./Postit"
 
@@ -30,11 +31,13 @@ export default function Notes(){
     // so the align content change from left to center
     <div className={notesList.length >=3 ? "multiple-notes": "few-notes"}>
    
-        
-    <NewPostit newNote={newNote}/>
-        
+  
+        <NewPostit newNote={newNote}/>
+
     {/* to render all the notes created */}
     {notesList.map((element,index) => <Postit note={element} title={titleList[index]}/>)}
+
+
    
     </div>
     )

@@ -1,15 +1,23 @@
-import Notes from './components/Notes'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Home from './components/Home'
+import DeletedNotes from './components/DeltedNotes'
+import {BrowserRouter, Route, Routes} from "react-router-dom"
 
 
 const App =()=>{
   
   return (
     <>    
-    <Header/>
-    <Notes/>
-    <Footer/>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/trash" element={<DeletedNotes/>}/>
+
+        
+    </Routes>
+    </BrowserRouter>
+    
+    
+    
     </>
   )
 };
