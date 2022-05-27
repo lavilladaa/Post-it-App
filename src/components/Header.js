@@ -1,5 +1,5 @@
 // import React from "react";
-import pencil from "./pencil.png";
+import pencil from "./assets/pencil.png";
 
 export default function Header() {
     return (

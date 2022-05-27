@@ -1,6 +1,6 @@
 import Notes from './components/Notes'
 import Header from './components/Header'
-
+import Footer from './components/Footer'
 
 
 const App =()=>{
@@ -9,6 +9,7 @@ const App =()=>{
     <>    
     <Header/>
     <Notes/>
+    <Footer/>
     </>
   )
 };

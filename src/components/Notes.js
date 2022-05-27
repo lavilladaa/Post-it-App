@@ -1,4 +1,3 @@
-// import Postit from './Postit'
 import React from "react"
 import {useState} from "react"
 import NewPostit from "./NewPostit"
@@ -27,8 +26,10 @@ export default function Notes(){
 
 
     return (
-       
-    <div className="Notes">
+    // To change the className when there are more than 3 notes
+    // so the align content change from left to center
+    <div className={notesList.length >=3 ? "multiple-notes": "few-notes"}>
+   
         
     <NewPostit newNote={newNote}/>
         
