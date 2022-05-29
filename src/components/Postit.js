@@ -1,12 +1,19 @@
 import React from "react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { deleteNoteAction } from "../redux/actions";
+import { editNoteAction } from "../redux/actions";
+
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { FaEdit } from "react-icons/fa";
 import { BiSave } from "react-icons/bi";
 
-export default function Postit({ note, title, id, editNote, deleteNote }) {
+// export default function Postit({ note, title, id, editNote, deleteNote }) {
+export default function Postit({ note, title, id }) {
   //to set the current date in the postit
   const current_date = new Date();
+
+  const dispatch = useDispatch();
 
   const [editState, setEditState] = useState(false);
   // In the initial value of the states is taken the original value in the postit.
@@ -46,7 +53,7 @@ export default function Postit({ note, title, id, editNote, deleteNote }) {
     // to prevent the website refresh
     if (editedText.trim() !== "") {
       event.preventDefault();
-      editNote(id, editedTitle, editedText);
+      dispatch(editNoteAction(id, editedText, editedTitle));
       // to render the original format note editState is updated to false
       setEditState(false);
     }
@@ -54,7 +61,8 @@ export default function Postit({ note, title, id, editNote, deleteNote }) {
 
   const deleteFun = (event) => {
     event.preventDefault();
-    deleteNote(id);
+    // deleteNote(id);
+    dispatch(deleteNoteAction(id));
     // deletedPostit(title, note);
   };
   // to quit the title if the user does not insert it

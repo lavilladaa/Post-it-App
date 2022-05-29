@@ -1,7 +1,9 @@
 import Home from "./components/Home";
 import DeletedNotes from "./components/DeletedNotes";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useState } from "react";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
+// import { useState } from "react";
 
 const App = () => {
   // const [tasksItems, setTasksItems] = useState([""]);
@@ -10,13 +12,15 @@ const App = () => {
   // console.log(deletedPostits_p);
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
+      <Provider store={store}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
 
-          <Route path="/trash" element={<DeletedNotes />} />
-        </Routes>
-      </BrowserRouter>
+            <Route path="/trash" element={<DeletedNotes />} />
+          </Routes>
+        </BrowserRouter>
+      </Provider>
     </>
   );
 };
