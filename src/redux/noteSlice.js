@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { toHaveFormValues } from "@testing-library/jest-dom/dist/matchers";
+// import { toHaveFormValues } from "@testing-library/jest-dom/dist/matchers";
 
 const getInitialPostits = () => {
   const localNotesList = window.localStorage.getItem("notesList");
   // to verify if there are already notes created
   // it is necessary to check the length after parse it
-  if (JSON.parse(localNotesList).length > 0) {
+  // if (JSON.parse(localNotesList).length > 0) {
+  // if (JSON.parse(localNotesList) !== null) {
+  if (localNotesList) {
     // to parse the notes list if there is one in the localStorage
     return JSON.parse(localNotesList);
   }
@@ -16,14 +18,15 @@ const getInitialPostits = () => {
 
 const getDeletedPostits = () => {
   const localDeletedList = window.localStorage.getItem("deletedList");
-  console.log("localDeletedList");
-  console.log(localDeletedList);
+  // console.log("localDeletedList");
+  // console.log(localDeletedList);
   // to verify if there are already notes created
   // it is necessary to check the length after parse it
-  if (JSON.parse(localDeletedList) !== null) {
+  // if (JSON.parse(localDeletedList) !== null) {
+  if (localDeletedList) {
     // if (JSON.parse(localDeletedList).length > 0) {
     // to parse the notes list if there is one in the localStorage
-    console.log("entre al if");
+    // console.log("entre al if");
 
     return JSON.parse(localDeletedList);
   }
@@ -64,15 +67,22 @@ export const notesSlice = createSlice({
         if (element.id === action.payload) {
           // to take the note out of the array.
           //the second argument is the amount of elements to take out.
-          // postitsDeleted.push(postitsList.splice(index, 1));
+          postitsList.splice(index, 1);
 
+          // to save the deleted postit and render it in the trash page.
           postitsDeleted.push({
             note: element.note,
             title: element.title,
             id: element.id,
           });
-          postitsList.splice(index, 1);
-          //
+          // postitsDeleted.push({
+          //   note: "hola",
+          //   title: "holra",
+          //   id: 0,
+          // });
+          // postitsDeleted.push({
+          //   ...action.payload,
+          // });
         }
       });
       // to update the localStorage
@@ -85,8 +95,7 @@ export const notesSlice = createSlice({
       //to update the state
       state.notesList = postitsList;
       state.deletedList = postitsDeleted;
-      console.log("los postit eliminados son:");
-      console.log(deletedList);
+      console.log(postitsDeleted);
     },
 
     editNote: (state, action) => {
@@ -103,8 +112,42 @@ export const notesSlice = createSlice({
       //to update the state
       state.notesList = postitsList;
     },
+
+    deleteNoteDef: (state, action) => {
+      const deletedList = window.localStorage.getItem("deletedList");
+      const postitsDeleted = JSON.parse(deletedList);
+      // console.log(postitsDeleted);
+      postitsDeleted.forEach((element, index) => {
+        if (element.id === action.payload) {
+          // to take the note out of the array.
+          //the second argument is the amount of elements to take out.
+          postitsDeleted.splice(index, 1);
+        }
+      });
+      // to update the localStorage
+      window.localStorage.setItem(
+        "deletedList",
+        JSON.stringify(postitsDeleted)
+      );
+
+      //to update the state
+
+      state.deletedList = postitsDeleted;
+    },
+
+    // restoreNote: (state, action) => {
+    //   // taking the notes created:
+    //   const notesList = window.localStorage.getItem("notesList");
+    //   state.notesList.push(action.payload);
+    //   const postitsList = JSON.parse(notesList);
+    //   // to take all the notes already created
+    //   postitsList.push({ ...action.payload });
+    //   // to update the localStorage
+    //   window.localStorage.setItem("notesList", JSON.stringify(postitsList));
+    // },
   },
 });
 
-export const { addNote, deleteNote, editNote } = notesSlice.actions;
+export const { addNote, deleteNote, editNote, deleteNoteDef } =
+  notesSlice.actions;
 export default notesSlice.reducer;
