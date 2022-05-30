@@ -179,9 +179,13 @@ it is necessary to define first this*/
   /* background-color: #7f7f81 */
 }
 
-#edit-button{
+#edit-button, #restore-button {
   margin-left:8em;
 }
+
+/* #restore-button {
+  margin-left:15em;
+} */
 
 .multiple-notes{
   display:grid;
