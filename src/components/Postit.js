@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { deleteNoteAction } from "../redux/actions";
-import { editNoteAction } from "../redux/actions";
+import { deleteNote } from "../redux/noteSlice";
+import { editNote } from "../redux/noteSlice";
+// import { editNoteAction } from "../redux/actions";
 
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { FaEdit } from "react-icons/fa";
@@ -45,15 +46,24 @@ export default function Postit({ note, title, id }) {
   const edit = () => {
     setEditState(true);
     // to take the original values
-    setEditedText(note);
-    setEditedTitle(title);
+    // setEditedText(note);
+    // setEditedTitle(title);
   };
 
   const saveNew = (event) => {
     // to prevent the website refresh
     if (editedText.trim() !== "") {
       event.preventDefault();
-      dispatch(editNoteAction(id, editedText, editedTitle));
+
+      const editedPostit = {
+        note: editedText,
+        title: editedTitle,
+        id: id,
+        time: current_date,
+      };
+      // editNote(id, editedText, editedTitle);
+
+      dispatch(editNote(editedPostit));
       // to render the original format note editState is updated to false
       setEditState(false);
     }
@@ -62,7 +72,7 @@ export default function Postit({ note, title, id }) {
   const deleteFun = (event) => {
     event.preventDefault();
     // deleteNote(id);
-    dispatch(deleteNoteAction(id));
+    dispatch(deleteNote(id));
     // deletedPostit(title, note);
   };
   // to quit the title if the user does not insert it

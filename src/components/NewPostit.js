@@ -1,6 +1,7 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addNoteAction } from "../redux/actions";
+import { useDispatch } from "react-redux";
+// import { addNoteAction } from "../redux/actions";
+import { addNote } from "../redux/noteSlice";
 // import { RiSave2Fill } from 'react-icons/ri';
 import { BiSave } from "react-icons/bi";
 
@@ -8,9 +9,9 @@ import { useState } from "react";
 // import  Postit from "./Postit"
 
 // export default function NewPostit({ newNote }) {
-export default function NewPostit() {
-  const current_date = new Date();
-  const notesList = useSelector((state) => state.postits);
+export default function NewPostit(id) {
+  const current_date = new Date().toLocaleString();
+  //   const notesList = useSelector((state) => state.postits);
 
   const dispatch = useDispatch();
 
@@ -32,9 +33,15 @@ export default function NewPostit() {
     // to prevent save a note in blank even if the user type spaces
     if (text.trim() !== "") {
       event.preventDefault();
-      const newPostit = { note: text, title: title, id: notesList.length };
+      const newPostit = {
+        note: text,
+        title: title,
+        id: Math.random(),
+        time: current_date,
+      };
       // newNote(text,title);
-      dispatch(addNoteAction(newPostit));
+      //   dispatch(addNoteAction(newPostit));
+      dispatch(addNote(newPostit));
       // to reset the note
       setText("");
       setTitle("");
@@ -61,7 +68,7 @@ export default function NewPostit() {
       ></textarea>
 
       <footer className="note-footer">
-        <p id="date">{current_date.toLocaleDateString()}</p>
+        <p id="date">{current_date}</p>
         <BiSave
           className="button"
           color="#7f7f81"
