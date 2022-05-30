@@ -1,17 +1,12 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-// import { addNoteAction } from "../redux/actions";
 import { addNote } from "../redux/noteSlice";
-// import { RiSave2Fill } from 'react-icons/ri';
 import { BiSave } from "react-icons/bi";
-
 import { useState } from "react";
-// import  Postit from "./Postit"
 
-// export default function NewPostit({ newNote }) {
-export default function NewPostit(id) {
-  const current_date = new Date().toLocaleString();
-  //   const notesList = useSelector((state) => state.postits);
+export default function NewPostit() {
+  // to take only the date without the time:
+  const current_date = new Date().toLocaleDateString();
 
   const dispatch = useDispatch();
 
@@ -36,11 +31,9 @@ export default function NewPostit(id) {
       const newPostit = {
         note: text,
         title: title,
-        id: Math.random(),
+        id: Math.random(), //to generate a unique id
         time: current_date,
       };
-      // newNote(text,title);
-      //   dispatch(addNoteAction(newPostit));
       dispatch(addNote(newPostit));
       // to reset the note
       setText("");
@@ -53,7 +46,7 @@ export default function NewPostit(id) {
       <textarea
         className="note-title"
         placeholder="Title..."
-        maxlength="40"
+        maxLength="40"
         onChange={titleInfo}
         value={title}
       ></textarea>

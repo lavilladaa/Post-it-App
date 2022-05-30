@@ -3,20 +3,18 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { deleteNote } from "../redux/noteSlice";
 import { editNote } from "../redux/noteSlice";
-// import { editNoteAction } from "../redux/actions";
-
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { FaEdit } from "react-icons/fa";
 import { BiSave } from "react-icons/bi";
 
-// export default function Postit({ note, title, id, editNote, deleteNote }) {
 export default function Postit({ note, title, id }) {
   //to set the current date in the postit
-  const current_date = new Date();
+  const current_date = new Date().toLocaleDateString();
 
   const dispatch = useDispatch();
 
   const [editState, setEditState] = useState(false);
+
   // In the initial value of the states is taken the original value in the postit.
   const [editedText, setEditedText] = useState(note);
   const [editedTitle, setEditedTitle] = useState(title);
@@ -30,29 +28,14 @@ export default function Postit({ note, title, id }) {
     setEditedText(event.target.value);
   };
 
-  // const [note, setNote] = useState(note);
-  // const [title, setTitle]=useState(title);
-
-  // // taking the edited info from the textarea
-  // const titleNew=(event)=>{
-  //     setTitle(event.target.value);
-  // }
-
-  // const noteNew=(event)=>{
-  //     setNote(event.target.value);
-  // }
-
   // onClick function for the edit button
   const edit = () => {
     setEditState(true);
-    // to take the original values
-    // setEditedText(note);
-    // setEditedTitle(title);
   };
 
   const saveNew = (event) => {
-    // to prevent the website refresh
     if (editedText.trim() !== "") {
+      // to prevent the website refresh
       event.preventDefault();
 
       const editedPostit = {
@@ -61,9 +44,9 @@ export default function Postit({ note, title, id }) {
         id: id,
         time: current_date,
       };
-      // editNote(id, editedText, editedTitle);
 
       dispatch(editNote(editedPostit));
+
       // to render the original format note editState is updated to false
       setEditState(false);
     }
@@ -71,17 +54,12 @@ export default function Postit({ note, title, id }) {
 
   const deleteFun = (event) => {
     event.preventDefault();
-    // deleteNote(id);
     dispatch(deleteNote(id));
-    // deletedPostit(title, note);
   };
+
   // to quit the title if the user does not insert it
   if (title === "") {
     title = "   ";
-  }
-
-  if (editedTitle === "") {
-    setEditedTitle("  ");
   }
 
   return (
@@ -92,25 +70,23 @@ export default function Postit({ note, title, id }) {
           <textarea
             className="note-title"
             placeholder="Title..."
-            maxlength="40"
+            maxLength="40"
             // to take the title from the NewPostit component.
             value={title}
-            // onChange={titleNew}
-            // value={editedTitle}
+            onChange={titleNew}
           ></textarea>
 
           <textarea
             className="note-text"
             placeholder="My note..."
-            maxlength="150"
+            maxLength="150"
             // to take the note text from the NewPostit component.
             value={note}
-            // onChange={noteNew}
-            // value={editedText}
+            onChange={noteNew}
           ></textarea>
 
           <footer className="note-footer">
-            <p id="date">{current_date.toLocaleDateString()}</p>
+            <p id="date">{current_date}</p>
             <FaEdit
               className="button"
               id="edit-button"
@@ -121,7 +97,7 @@ export default function Postit({ note, title, id }) {
               // to change the edit state
               onClick={edit}
             />
-            {/* <button className="button" onClick={deleteFun}> */}
+
             <RiDeleteBin5Line
               className="button"
               size="1.7em"
@@ -130,7 +106,6 @@ export default function Postit({ note, title, id }) {
               onMouseOut={({ target }) => (target.style.color = "#7f7f81")}
               onClick={deleteFun}
             />
-            {/* </button> */}
           </footer>
         </div>
       ) : (
@@ -139,11 +114,10 @@ export default function Postit({ note, title, id }) {
             <textarea
               className="note-title"
               placeholder="Title..."
-              maxlength="40"
+              maxLength="40"
               onChange={titleNew}
               // to set the edited title
               value={editedTitle}
-              // value={title}
             ></textarea>
 
             <textarea
@@ -153,11 +127,10 @@ export default function Postit({ note, title, id }) {
               onChange={noteNew}
               // to set the edited text in the note
               value={editedText}
-              // value={note}
             ></textarea>
 
             <footer className="note-footer">
-              <p id="date">{current_date.toLocaleDateString()}</p>
+              <p id="date">{current_date}</p>
               <BiSave
                 className="button"
                 color="#7f7f81"
