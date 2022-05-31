@@ -25,7 +25,7 @@ export default function Footer() {
         <footer className="footer-section">
           {/* <Link to="/trash"> */}
           <button className="icon-button" onClick={alertTrash}>
-            <img src={trash} width="70px" alt="Trash" />
+            <img src={trash} width="65px" alt="Trash" />
           </button>
           {/* </Link> */}
         </footer>

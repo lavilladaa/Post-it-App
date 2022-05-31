@@ -91,9 +91,9 @@ export default function Postit({ note, title, id }) {
               className="button"
               id="edit-button"
               size="1.6em"
-              color="#7f7f81"
-              onMouseOver={({ target }) => (target.style.color = "#535354")}
-              onMouseOut={({ target }) => (target.style.color = "#7f7f81")}
+              color="#656565"
+              onMouseOver={({ target }) => (target.style.color = "black")}
+              onMouseOut={({ target }) => (target.style.color = "#656565")}
               // to change the edit state
               onClick={edit}
             />
@@ -101,9 +101,9 @@ export default function Postit({ note, title, id }) {
             <RiDeleteBin5Line
               className="button"
               size="1.7em"
-              color="#7f7f81"
-              onMouseOver={({ target }) => (target.style.color = "#535354")}
-              onMouseOut={({ target }) => (target.style.color = "#7f7f81")}
+              color="#656565"
+              onMouseOver={({ target }) => (target.style.color = "black")}
+              onMouseOut={({ target }) => (target.style.color = "#656565")}
               onClick={deleteFun}
             />
           </footer>
@@ -133,10 +133,10 @@ export default function Postit({ note, title, id }) {
               <p id="date">{current_date}</p>
               <BiSave
                 className="button"
-                color="#7f7f81"
+                color="#656565"
                 size="1.7em"
-                onMouseOver={({ target }) => (target.style.color = "#535354")}
-                onMouseOut={({ target }) => (target.style.color = "#7f7f81")}
+                onMouseOver={({ target }) => (target.style.color = "black")}
+                onMouseOut={({ target }) => (target.style.color = "#656565")}
                 onClick={saveNew}
               />
             </footer>

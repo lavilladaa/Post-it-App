@@ -66,9 +66,45 @@ body {
 
 }
 
-.postit {
+
+.All-postits:nth-child(5n+1){
   background-color: #D8A9C4;
-  margin:15px;
+  /* border: 1px solid rgb(118, 113, 113); */
+  height: 280px;
+}
+.All-postits:nth-child(5n+2){
+  background-color: #93E1D8;
+  /* border: 1px solid rgb(118, 113, 113); */
+  height: 280px;
+}
+
+.All-postits:nth-child(5n+3){
+  background-color: #F7EF99;
+  /* border: 1px solid rgb(118, 113, 113); */
+  height: 280px;
+}
+
+.All-postits:nth-child(5n+4){
+  background-color: #BBEB9C;
+  /* border: 1px solid rgb(118, 113, 113); */
+  height: 280px;
+}
+
+.All-postits:nth-child(5n+5){
+  background-color: #FEC18B;
+  /* border: 1px solid rgb(118, 113, 113); */
+  height: 280px;
+}
+
+
+
+
+.postit {
+  /* background-color: #D8A9C4; */
+  background-color: transparent;
+  /* margin:15px; */
+  /* margin-top:0; */
+  /* margin-right:10px; */
   min-height: 260px;
   padding: 0rem;
  	display: flex;
@@ -87,13 +123,19 @@ body {
   /* To take the padding into account
   and use width=100%  */
   box-sizing: border-box;
-  background-color: #E4CAD9;
+  
+  /* background-color: #E4CAD9; */
+  /* background-color: #D8A9C4; */
+  background-color: transparent;
   font-size: 18px;
   padding: 0.5rem;
   margin: 0;
   display: flex;
 	flex-direction: column;
   border: none;
+  /* border: 1px solid rgb(118, 113, 113); */
+  border-bottom: 1px dashed rgb(118, 113, 113);
+
   resize: none;
   outline: none;
   /* To fit the textarea according
@@ -107,9 +149,12 @@ body {
   
 }
 
+
+
 .note-text {
   box-sizing: border-box;
-  background-color: #D8A9C4;
+  /* background-color: #D8A9C4; */
+  background-color: transparent;
   /* background-color: #aab4bc; */
   font-size: 16px;
   padding: 0.5rem;
@@ -188,14 +233,14 @@ it is necessary to define first this*/
 }
 
 #edit-button, #restore-button {
-  margin-left:8em;
+  margin-left:9em;
 }
 
 
 
 .multiple-notes{
   display:grid;
-  grid-gap:0em;
+  grid-gap:1em;
   /* to organize the notes in the screen automatically */
   grid-template-columns:repeat(auto-fit, 290px);
   margin:auto;
@@ -203,6 +248,7 @@ it is necessary to define first this*/
   /* to make the footer doesn't touch the notes content*/
    /* so the hover works well on the delete icon */ 
   padding-bottom: 100px;
+  
   
  
 }
@@ -283,6 +329,7 @@ it is necessary to define first this*/
 .icon-button{
   border:none;
   background-color:transparent;
+  margin-right:14px;
 }
 
 .icon-button:hover {

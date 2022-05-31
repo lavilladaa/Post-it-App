@@ -42,35 +42,37 @@ export default function NewPostit() {
   };
 
   return (
-    <div className="postit">
-      <textarea
-        className="note-title"
-        placeholder="Title..."
-        maxLength="40"
-        onChange={titleInfo}
-        value={title}
-      ></textarea>
+    <div className="All-postits">
+      <div className="postit">
+        <textarea
+          className="note-title"
+          placeholder="Title..."
+          maxLength="40"
+          onChange={titleInfo}
+          value={title}
+        ></textarea>
 
-      <textarea
-        className="note-text"
-        placeholder="My note..."
-        maxLength="230"
-        onChange={noteInfo}
-        // to associate the state value
-        value={text}
-      ></textarea>
+        <textarea
+          className="note-text"
+          placeholder="My note..."
+          maxLength="230"
+          onChange={noteInfo}
+          // to associate the state value
+          value={text}
+        ></textarea>
 
-      <footer className="note-footer">
-        <p id="date">{current_date}</p>
-        <BiSave
-          className="button"
-          color="#7f7f81"
-          size="1.7em"
-          onMouseOver={({ target }) => (target.style.color = "#535354")}
-          onMouseOut={({ target }) => (target.style.color = "#7f7f81")}
-          onClick={saveNote}
-        />
-      </footer>
+        <footer className="note-footer">
+          <p id="date">{current_date}</p>
+          <BiSave
+            className="button"
+            color="#656565"
+            size="1.7em"
+            onMouseOver={({ target }) => (target.style.color = "black")}
+            onMouseOut={({ target }) => (target.style.color = "#656565")}
+            onClick={saveNote}
+          />
+        </footer>
+      </div>
     </div>
   );
 }
