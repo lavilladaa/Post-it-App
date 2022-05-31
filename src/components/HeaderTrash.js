@@ -1,14 +1,14 @@
 // import React from "react";
 import pencil from "./assets/pencil.png";
 
-export default function Header() {
+export default function HeaderTrash() {
   return (
     <header className="header">
       <span>
         <h1 className="app-title">
           Trash{" "}
           <img
-            className="header-pencil"
+            className="header-pencil-trash"
             src={pencil}
             alt="pencil-icon"
             height="40px"
