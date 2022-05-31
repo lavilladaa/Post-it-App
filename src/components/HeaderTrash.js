@@ -11,7 +11,7 @@ export default function HeaderTrash() {
             className="header-pencil-trash"
             src={pencil}
             alt="pencil-icon"
-            height="40px"
+            height="70px"
           />
         </h1>
         {/* <img className="header-pencil" src={pencil} alt="pencil-icon" height="50px"/> */}

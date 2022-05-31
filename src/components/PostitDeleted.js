@@ -1,5 +1,6 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { MdOutlineRestorePage } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
 import { deleteNoteDef, addNote } from "../redux/noteSlice";
@@ -7,6 +8,8 @@ import { deleteNoteDef, addNote } from "../redux/noteSlice";
 export default function PostitDeleted({ note, title, id }) {
   // to take only the date without the time:
   const current_date = new Date().toLocaleDateString();
+  const deletedList = useSelector((state) => state.note.deletedList);
+  const length = deletedList.length;
 
   const dispatch = useDispatch();
 
@@ -48,15 +51,32 @@ export default function PostitDeleted({ note, title, id }) {
 
       <footer className="note-footer">
         <p id="date">{current_date}</p>
-        <MdOutlineRestorePage
-          className="button"
-          id="restore-button"
-          color="#7f7f81"
-          size="1.7em"
-          onMouseOver={({ target }) => (target.style.color = "#535354")}
-          onMouseOut={({ target }) => (target.style.color = "#7f7f81")}
-          onClick={restoreNote}
-        />
+        {/* to make the restore button redirect to the home page 
+        when there is only one post it in the trash page */}
+        {length === 1 ? (
+          <Link to="/">
+            <MdOutlineRestorePage
+              className="button"
+              id="restore-button"
+              color="#7f7f81"
+              size="1.7em"
+              onMouseOver={({ target }) => (target.style.color = "#535354")}
+              onMouseOut={({ target }) => (target.style.color = "#7f7f81")}
+              onClick={restoreNote}
+            />
+          </Link>
+        ) : (
+          <MdOutlineRestorePage
+            className="button"
+            id="restore-button"
+            color="#7f7f81"
+            size="1.7em"
+            onMouseOver={({ target }) => (target.style.color = "#535354")}
+            onMouseOut={({ target }) => (target.style.color = "#7f7f81")}
+            onClick={restoreNote}
+          />
+        )}
+
         <MdDeleteForever
           className="button"
           color="#7f7f81"
