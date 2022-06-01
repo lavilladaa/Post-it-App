@@ -10,6 +10,7 @@ export default function PostitDeleted({ note, title, id }) {
   const current_date = new Date().toLocaleDateString();
   const deletedList = useSelector((state) => state.note.deletedList);
   const length = deletedList.length;
+  const colorList = useSelector((state) => state.note.colorList);
 
   const dispatch = useDispatch();
 
@@ -28,7 +29,14 @@ export default function PostitDeleted({ note, title, id }) {
     // to quite the note form the trash page
     dispatch(deleteNoteDef(id));
   };
-  let color_p = "#F7EF99";
+  let colorP = "#D8A9C4";
+  colorList.forEach((element) => {
+    if (element.id === id) {
+      colorP = element.color;
+      // console.log("soy el colorP creado");
+      // console.log(colorP);
+    }
+  });
 
   return (
     // To change the className when there are more than 3 notes
@@ -37,7 +45,7 @@ export default function PostitDeleted({ note, title, id }) {
     //   className={` ${index === 6 ? "yellow" : ""} ${index === 2 ? "blue" : ""}`}
     // >
     // <div className="All-postits">
-    <div style={{ backgroundColor: color_p }}>
+    <div style={{ backgroundColor: colorP }}>
       <div className="postit">
         <textarea
           className="note-title"

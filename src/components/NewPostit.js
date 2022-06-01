@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addNote } from "../redux/noteSlice";
+import { addNote, createColorsId } from "../redux/noteSlice";
 import { BiSave } from "react-icons/bi";
 import { useState } from "react";
 
@@ -34,7 +34,9 @@ export default function NewPostit() {
         id: Math.random(), //to generate a unique id
         time: current_date,
       };
+
       dispatch(addNote(newPostit));
+      dispatch(createColorsId({ id: newPostit.id, color: "#D8A9C4" }));
       // to reset the note
       setText("");
       setTitle("");

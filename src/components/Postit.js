@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { deleteNote } from "../redux/noteSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteNote, colorChange } from "../redux/noteSlice";
 import { editNote } from "../redux/noteSlice";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { FaEdit } from "react-icons/fa";
@@ -10,6 +10,7 @@ import { BiSave } from "react-icons/bi";
 export default function Postit({ note, title, id }) {
   //to set the current date in the postit
   const current_date = new Date().toLocaleDateString();
+  const colorList = useSelector((state) => state.note.colorList);
 
   const dispatch = useDispatch();
 
@@ -57,21 +58,30 @@ export default function Postit({ note, title, id }) {
     dispatch(deleteNote(id));
   };
 
-  const changeColor = (event) => {
+  const colorFun = () => {
     let color = document.getElementById(id).value;
-    console.log(color);
+    dispatch(colorChange({ id: id, color: color }));
   };
 
   // to quit the title if the user does not insert it
   if (title === "") {
     title = "   ";
   }
+  let colorP = "#D8A9C4";
 
-  // let color = document.getElementById("color-postit").value;
+  colorList.forEach((element) => {
+    if (element.id === id) {
+      colorP = element.color;
+      // console.log("soy el colorP creado");
+      // console.log(colorP);
+    }
+  });
 
   return (
     // <div>
-    <div className="All-postits">
+    // <div className="All-postits">
+    // <div style={{ backgroundColor: "#D8A9C4 " }}>
+    <div style={{ backgroundColor: colorP }}>
       {/* In case the mode edit is off, should render the original format postit */}
       {!editState ? (
         <div className="postit">
@@ -99,12 +109,14 @@ export default function Postit({ note, title, id }) {
               type="color"
               list="presetColors"
               id={id}
-              onChange={changeColor}
+              onChange={colorFun}
             />
             <datalist id="presetColors">
-              <option>#ff0000</option>/>
-              <option>#00ff00</option>
-              <option>#0000ff</option>
+              <option>#D8A9C4</option>/>
+              <option>#93E1D8</option>
+              <option>#F7EF99</option>
+              <option>#BBEB9C</option>
+              <option>#FEC18B</option>
             </datalist>
             <FaEdit
               className="button"
