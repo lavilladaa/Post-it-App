@@ -57,13 +57,21 @@ export default function Postit({ note, title, id }) {
     dispatch(deleteNote(id));
   };
 
+  const changeColor = (event) => {
+    let color = document.getElementById(id).value;
+    console.log(color);
+  };
+
   // to quit the title if the user does not insert it
   if (title === "") {
     title = "   ";
   }
 
+  // let color = document.getElementById("color-postit").value;
+
   return (
-    <div>
+    // <div>
+    <div className="All-postits">
       {/* In case the mode edit is off, should render the original format postit */}
       {!editState ? (
         <div className="postit">
@@ -87,6 +95,17 @@ export default function Postit({ note, title, id }) {
 
           <footer className="note-footer">
             <p id="date">{current_date}</p>
+            <input
+              type="color"
+              list="presetColors"
+              id={id}
+              onChange={changeColor}
+            />
+            <datalist id="presetColors">
+              <option>#ff0000</option>/>
+              <option>#00ff00</option>
+              <option>#0000ff</option>
+            </datalist>
             <FaEdit
               className="button"
               id="edit-button"
@@ -97,6 +116,7 @@ export default function Postit({ note, title, id }) {
               // to change the edit state
               onClick={edit}
             />
+            {/* <input type="color" name="favcolor" value="#FFFFF" /> */}
 
             <RiDeleteBin5Line
               className="button"
@@ -131,6 +151,7 @@ export default function Postit({ note, title, id }) {
 
             <footer className="note-footer">
               <p id="date">{current_date}</p>
+
               <BiSave
                 className="button"
                 color="#656565"

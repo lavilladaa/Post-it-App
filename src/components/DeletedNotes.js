@@ -15,7 +15,7 @@ export default function DeletedNotes() {
     <div className={deletedList.length >= 3 ? "multiple-notes" : "few-notes"}>
       {/* to render all the notes created */}
 
-      {deletedList.map((element) => (
+      {deletedList.map((element, index) => (
         <PostitDeleted
           note={element.note}
           title={element.title}

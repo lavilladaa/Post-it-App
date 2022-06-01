@@ -28,33 +28,49 @@ export default function PostitDeleted({ note, title, id }) {
     // to quite the note form the trash page
     dispatch(deleteNoteDef(id));
   };
+  let color_p = "#F7EF99";
 
   return (
     // To change the className when there are more than 3 notes
     // so the align content change from left to center
+    // <div
+    //   className={` ${index === 6 ? "yellow" : ""} ${index === 2 ? "blue" : ""}`}
+    // >
+    // <div className="All-postits">
+    <div style={{ backgroundColor: color_p }}>
+      <div className="postit">
+        <textarea
+          className="note-title"
+          placeholder="Title..."
+          maxLength="40"
+          value={title}
+        ></textarea>
 
-    <div className="postit">
-      <textarea
-        className="note-title"
-        placeholder="Title..."
-        maxLength="40"
-        value={title}
-      ></textarea>
+        <textarea
+          className="note-text"
+          placeholder="My note..."
+          maxLength="230"
+          // to associate the state value
+          value={note}
+        ></textarea>
 
-      <textarea
-        className="note-text"
-        placeholder="My note..."
-        maxLength="230"
-        // to associate the state value
-        value={note}
-      ></textarea>
-
-      <footer className="note-footer">
-        <p id="date">{current_date}</p>
-        {/* to make the restore button redirect to the home page 
+        <footer className="note-footer">
+          <p id="date">{current_date}</p>
+          {/* to make the restore button redirect to the home page 
         when there is only one post it in the trash page */}
-        {length === 1 ? (
-          <Link to="/">
+          {length === 1 ? (
+            <Link to="/">
+              <MdOutlineRestorePage
+                className="button"
+                id="restore-button"
+                color="#7f7f81"
+                size="1.7em"
+                onMouseOver={({ target }) => (target.style.color = "#535354")}
+                onMouseOut={({ target }) => (target.style.color = "#7f7f81")}
+                onClick={restoreNote}
+              />
+            </Link>
+          ) : (
             <MdOutlineRestorePage
               className="button"
               id="restore-button"
@@ -64,28 +80,18 @@ export default function PostitDeleted({ note, title, id }) {
               onMouseOut={({ target }) => (target.style.color = "#7f7f81")}
               onClick={restoreNote}
             />
-          </Link>
-        ) : (
-          <MdOutlineRestorePage
+          )}
+
+          <MdDeleteForever
             className="button"
-            id="restore-button"
             color="#7f7f81"
             size="1.7em"
             onMouseOver={({ target }) => (target.style.color = "#535354")}
             onMouseOut={({ target }) => (target.style.color = "#7f7f81")}
-            onClick={restoreNote}
+            onClick={deleteDef}
           />
-        )}
-
-        <MdDeleteForever
-          className="button"
-          color="#7f7f81"
-          size="1.7em"
-          onMouseOver={({ target }) => (target.style.color = "#535354")}
-          onMouseOut={({ target }) => (target.style.color = "#7f7f81")}
-          onClick={deleteDef}
-        />
-      </footer>
+        </footer>
+      </div>
     </div>
   );
 }

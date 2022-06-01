@@ -134,17 +134,6 @@ export const notesSlice = createSlice({
 
       state.deletedList = postitsDeleted;
     },
-
-    // restoreNote: (state, action) => {
-    //   // taking the notes created:
-    //   const notesList = window.localStorage.getItem("notesList");
-    //   state.notesList.push(action.payload);
-    //   const postitsList = JSON.parse(notesList);
-    //   // to take all the notes already created
-    //   postitsList.push({ ...action.payload });
-    //   // to update the localStorage
-    //   window.localStorage.setItem("notesList", JSON.stringify(postitsList));
-    // },
   },
 });
 
