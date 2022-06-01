@@ -44,7 +44,7 @@ export default function NewPostit() {
   };
 
   return (
-    <div className="All-postits">
+    <div style={{ backgroundColor: "#D8A9C4" }}>
       <div className="postit">
         <textarea
           className="note-title"

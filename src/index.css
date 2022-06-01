@@ -18,6 +18,7 @@ body {
   position:relative; */
   min-height:100vh;
   background-image:url("./components/assets/wall.jpg");
+  background-repeat:round;
 
 }
 
@@ -65,42 +66,6 @@ body {
   /* float:50px; */
   transform: rotate(30deg);
 
-}
-
-
-.All-postits:nth-child(5n+1){
-  background-color: #D8A9C4;
-  /* border: 1px solid rgb(118, 113, 113); */
-  height: 280px;
-}
-.All-postits:nth-child(5n+2){
-  background-color: #93E1D8;
-  /* border: 1px solid rgb(118, 113, 113); */
-  height: 280px;
-}
-
-.All-postits:nth-child(5n+3){
-  background-color: #F7EF99;
-  /* border: 1px solid rgb(118, 113, 113); */
-  height: 280px;
-}
-
-.All-postits:nth-child(5n+4){
-  background-color: #BBEB9C;
-  /* border: 1px solid rgb(118, 113, 113); */
-  height: 280px;
-}
-
-.All-postits:nth-child(5n+5){
-  background-color: #FEC18B;
-  /* border: 1px solid rgb(118, 113, 113); */
-  height: 280px;
-}
-
-.yellow {
-  background-color: #F7EF99;
-  border: 1px solid rgb(118, 113, 113);
-  height: 280px;
 }
 
 
@@ -237,9 +202,14 @@ it is necessary to define first this*/
   /* background-color: #7f7f81 */
 }
 
-#edit-button, #restore-button {
+#edit-button{
   /* margin-left:1em; */
-  margin-left:0.5em;
+  margin-left:0.6em;
+}
+
+#restore-button {
+  /* margin-left:1em; */
+  margin-left:10em;
 }
 
 .color-input{
@@ -247,6 +217,12 @@ it is necessary to define first this*/
   height:20px;
   padding:0;
   margin-left:7em;
+  background-color:#b5b3b3;
+  border-radius:4px;
+  /* background-color:white; */
+}
+.color-input:hover{
+  cursor:pointer;
 }
 
 
@@ -259,7 +235,7 @@ it is necessary to define first this*/
   justify-content: center;
   /* to make the footer doesn't touch the notes content*/
    /* so the hover works well on the delete icon */ 
-   padding-left: 10px;
+   padding-left: 20px;
    padding-right: 10px;
   padding-bottom: 100px;
   
@@ -274,7 +250,7 @@ it is necessary to define first this*/
   /* to organize the notes in the screen automatically */
   grid-template-columns:repeat(auto-fit, 290px);
   margin: auto;
-  padding-left: 10px;
+  padding-left: 20px;
   padding-right: 10px;
  
 }

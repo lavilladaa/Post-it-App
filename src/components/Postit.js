@@ -59,6 +59,8 @@ export default function Postit({ note, title, id }) {
   };
 
   const colorFun = () => {
+    // to take the input color of each postit
+    //is taken the id of the postit in the id of the color input
     let color = document.getElementById(id).value;
     dispatch(colorChange({ id: id, color: color }));
   };
@@ -107,12 +109,14 @@ export default function Postit({ note, title, id }) {
             <p id="date">{current_date}</p>
             <input
               type="color"
-              list="presetColors"
+              className="color-input"
+              list="defaultColors"
               id={id}
               onChange={colorFun}
+              value={colorP}
             />
-            <datalist id="presetColors">
-              <option>#D8A9C4</option>/>
+            <datalist id="defaultColors">
+              <option>#D8A9C4</option>
               <option>#93E1D8</option>
               <option>#F7EF99</option>
               <option>#BBEB9C</option>
