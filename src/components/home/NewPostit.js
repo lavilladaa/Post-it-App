@@ -5,13 +5,12 @@ import { BiSave } from "react-icons/bi";
 import { useState } from "react";
 
 export default function NewPostit() {
+  const [text, setText] = useState("");
+  const [title, setTitle] = useState("");
   // to take only the date without the time:
   const current_date = new Date().toLocaleDateString();
 
   const dispatch = useDispatch();
-
-  const [text, setText] = useState("");
-  const [title, setTitle] = useState("");
 
   // To take the text in the note:
   const noteInfo = (event) => {
@@ -40,6 +39,8 @@ export default function NewPostit() {
       // to reset the note
       setText("");
       setTitle("");
+    } else {
+      alert("Please enter a text in the Post-it");
     }
   };
 
@@ -49,7 +50,7 @@ export default function NewPostit() {
         <textarea
           className="note-title"
           placeholder="Title..."
-          maxLength="40"
+          maxLength="25"
           onChange={titleInfo}
           value={title}
         ></textarea>
@@ -57,7 +58,9 @@ export default function NewPostit() {
         <textarea
           className="note-text"
           placeholder="My note..."
-          maxLength="230"
+          // trying to avoid the note generate the scroll bar
+          // so is more similar to how works a postit in the real life
+          maxLength="190"
           onChange={noteInfo}
           // to associate the state value
           value={text}

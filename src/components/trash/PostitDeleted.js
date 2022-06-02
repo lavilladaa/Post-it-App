@@ -6,14 +6,13 @@ import { MdDeleteForever } from "react-icons/md";
 import { deleteNoteDef, addNote } from "../../redux/noteSlice";
 
 export default function PostitDeleted({ note, title, id }) {
-  // to take only the date without the time:
-  const current_date = new Date().toLocaleDateString();
   const deletedList = useSelector((state) => state.note.deletedList);
-  const length = deletedList.length;
   const colorList = useSelector((state) => state.note.colorList);
-
   const dispatch = useDispatch();
 
+  const length = deletedList.length;
+  // to take only the date without the time:
+  const current_date = new Date().toLocaleDateString();
   const deleteDef = () => {
     dispatch(deleteNoteDef(id));
   };
@@ -33,18 +32,10 @@ export default function PostitDeleted({ note, title, id }) {
   colorList.forEach((element) => {
     if (element.id === id) {
       colorP = element.color;
-      // console.log("soy el colorP creado");
-      // console.log(colorP);
     }
   });
 
   return (
-    // To change the className when there are more than 3 notes
-    // so the align content change from left to center
-    // <div
-    //   className={` ${index === 6 ? "yellow" : ""} ${index === 2 ? "blue" : ""}`}
-    // >
-    // <div className="All-postits">
     <div style={{ backgroundColor: colorP }}>
       <div className="postit">
         <textarea
@@ -52,6 +43,9 @@ export default function PostitDeleted({ note, title, id }) {
           placeholder="Title..."
           maxLength="40"
           value={title}
+          // to avoid the warning
+          //"You provided a `value` prop to a form field without an `onChange` handler."
+          readOnly={true}
         ></textarea>
 
         <textarea
@@ -60,6 +54,7 @@ export default function PostitDeleted({ note, title, id }) {
           maxLength="230"
           // to associate the state value
           value={note}
+          readOnly={true}
         ></textarea>
 
         <footer className="note-footer">
@@ -89,15 +84,27 @@ export default function PostitDeleted({ note, title, id }) {
               onClick={restoreNote}
             />
           )}
-
-          <MdDeleteForever
-            className="button"
-            color="#7f7f81"
-            size="1.7em"
-            onMouseOver={({ target }) => (target.style.color = "#535354")}
-            onMouseOut={({ target }) => (target.style.color = "#7f7f81")}
-            onClick={deleteDef}
-          />
+          {length === 1 ? (
+            <Link to="/">
+              <MdDeleteForever
+                className="button"
+                color="#7f7f81"
+                size="1.7em"
+                onMouseOver={({ target }) => (target.style.color = "#535354")}
+                onMouseOut={({ target }) => (target.style.color = "#7f7f81")}
+                onClick={deleteDef}
+              />
+            </Link>
+          ) : (
+            <MdDeleteForever
+              className="button"
+              color="#7f7f81"
+              size="1.7em"
+              onMouseOver={({ target }) => (target.style.color = "#535354")}
+              onMouseOut={({ target }) => (target.style.color = "#7f7f81")}
+              onClick={deleteDef}
+            />
+          )}
         </footer>
       </div>
     </div>

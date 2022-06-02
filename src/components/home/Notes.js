@@ -16,14 +16,12 @@ export default function Notes() {
       {/* to render all the notes created */}
 
       {notesList.map((element) => (
-        // <div className="All-postits">
         <Postit
           key={element.id}
           note={element.note}
           title={element.title}
           id={element.id}
         />
-        // </div>
       ))}
     </div>
   );

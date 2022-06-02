@@ -8,17 +8,15 @@ import { FaEdit } from "react-icons/fa";
 import { BiSave } from "react-icons/bi";
 
 export default function Postit({ note, title, id }) {
+  // In the initial value of the states is taken the original value in the postit.
+  const [editedText, setEditedText] = useState(note);
+  const [editedTitle, setEditedTitle] = useState(title);
+  const [editState, setEditState] = useState(false);
   //to set the current date in the postit
   const current_date = new Date().toLocaleDateString();
   const colorList = useSelector((state) => state.note.colorList);
 
   const dispatch = useDispatch();
-
-  const [editState, setEditState] = useState(false);
-
-  // In the initial value of the states is taken the original value in the postit.
-  const [editedText, setEditedText] = useState(note);
-  const [editedTitle, setEditedTitle] = useState(title);
 
   // taking the edited info from the textarea
   const titleNew = (event) => {
@@ -74,15 +72,10 @@ export default function Postit({ note, title, id }) {
   colorList.forEach((element) => {
     if (element.id === id) {
       colorP = element.color;
-      // console.log("soy el colorP creado");
-      // console.log(colorP);
     }
   });
 
   return (
-    // <div>
-    // <div className="All-postits">
-    // <div style={{ backgroundColor: "#D8A9C4 " }}>
     <div style={{ backgroundColor: colorP }}>
       {/* In case the mode edit is off, should render the original format postit */}
       {!editState ? (
@@ -90,19 +83,23 @@ export default function Postit({ note, title, id }) {
           <textarea
             className="note-title"
             placeholder="Title..."
-            maxLength="40"
+            maxLength="25"
             // to take the title from the NewPostit component.
             value={title}
             onChange={titleNew}
+            // to avoid the warning
+            //"You provided a `value` prop to a form field without an `onChange` handler."
+            readOnly={true}
           ></textarea>
 
           <textarea
             className="note-text"
             placeholder="My note..."
-            maxLength="150"
+            maxLength="190"
             // to take the note text from the NewPostit component.
             value={note}
             onChange={noteNew}
+            readOnly={true}
           ></textarea>
 
           <footer className="note-footer">
@@ -132,7 +129,6 @@ export default function Postit({ note, title, id }) {
               // to change the edit state
               onClick={edit}
             />
-            {/* <input type="color" name="favcolor" value="#FFFFF" /> */}
 
             <RiDeleteBin5Line
               className="button"
@@ -150,7 +146,7 @@ export default function Postit({ note, title, id }) {
             <textarea
               className="note-title"
               placeholder="Title..."
-              maxLength="40"
+              maxLength="25"
               onChange={titleNew}
               // to set the edited title
               value={editedTitle}
@@ -159,7 +155,7 @@ export default function Postit({ note, title, id }) {
             <textarea
               className="note-text"
               placeholder="My note..."
-              maxLength="230"
+              maxLength="190"
               onChange={noteNew}
               // to set the edited text in the note
               value={editedText}
