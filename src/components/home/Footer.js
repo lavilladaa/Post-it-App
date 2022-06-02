@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import trash from "./assets/trash.png";
+import trash from "../assets/trash.png";
 
 export default function Footer() {
   const deletedList = useSelector((state) => state.note.deletedList);

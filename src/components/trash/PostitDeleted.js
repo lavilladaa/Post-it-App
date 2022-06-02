@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { MdOutlineRestorePage } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
-import { deleteNoteDef, addNote } from "../redux/noteSlice";
+import { deleteNoteDef, addNote } from "../../redux/noteSlice";
 
 export default function PostitDeleted({ note, title, id }) {
   // to take only the date without the time:

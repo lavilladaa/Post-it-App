@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import home from "./assets/home.png";
+import home from "../assets/home.png";
 
 export default function FooterTrash() {
   return (

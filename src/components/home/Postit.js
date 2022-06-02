@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteNote, colorChange } from "../redux/noteSlice";
-import { editNote } from "../redux/noteSlice";
+import { deleteNote, colorChange } from "../../redux/noteSlice";
+import { editNote } from "../../redux/noteSlice";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { FaEdit } from "react-icons/fa";
 import { BiSave } from "react-icons/bi";

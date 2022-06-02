@@ -1,6 +1,6 @@
-import Home from "./components/Home";
+import Home from "./components//home/Home";
 // import DeletedNotes from "./components/DeletedNotes";
-import Trash from "./components/Trash";
+import Trash from "./components/trash/Trash";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";

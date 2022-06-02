@@ -154,9 +154,6 @@ export const notesSlice = createSlice({
       // taking the notes created:
       const colorList = window.localStorage.getItem("colorList");
       const colorPostits = JSON.parse(colorList);
-      // const noteList = window.localStorage.getItem("notesList");
-      // const postitsList = JSON.parse(noteList);
-      // to take all the notes already created
 
       colorPostits.forEach((element) => {
         if (element.id === action.payload.id) {

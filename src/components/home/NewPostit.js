@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addNote, createColorsId } from "../redux/noteSlice";
+import { addNote, createColorsId } from "../../redux/noteSlice";
 import { BiSave } from "react-icons/bi";
 import { useState } from "react";
 
