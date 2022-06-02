@@ -1,10 +1,10 @@
-import React from "react";
-import HeaderTrash from "./HeaderTrash";
-import FooterTrash from "./FooterTrash";
-import DeletedNotes from "./DeletedNotes";
+import React from 'react';
+import HeaderTrash from './HeaderTrash';
+import FooterTrash from './FooterTrash';
+import DeletedNotes from './DeletedNotes';
 // import {BrowserRouter, Route, Routes} from "react-router-dom"
 
-const Trash = () => {
+function Trash () {
   return (
     <>
       <HeaderTrash />

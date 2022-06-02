@@ -1,7 +1,7 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import NewPostit from "./NewPostit";
-import Postit from "./Postit";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import NewPostit from './NewPostit';
+import Postit from './Postit';
 
 export default function Notes() {
   // to take the notesList from the global state:
@@ -10,7 +10,7 @@ export default function Notes() {
   return (
     // To change the className when there are more than 3 notes
     // so the align content change from left to center
-    <div className={notesList.length >= 3 ? "multiple-notes" : "few-notes"}>
+    <div className={notesList.length >= 3 ? 'multiple-notes' : 'few-notes'}>
       <NewPostit />
 
       {/* to render all the notes created */}

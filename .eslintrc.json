@@ -1,0 +1,32 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true
+    },
+    "extends": ["airbnb", "prettier"],
+    // "parserOptions": {
+
+    // },
+    "plugins": [
+        "react", "prettier"
+    ],
+    "rules": {
+        "no-unused-vars":"warn",
+        "prettier/prettier":"off",
+        "no-alert":"off",
+        "quotes": [2, "single", { "avoidEscape": true }]
+        
+    },
+
+    "parserOptions": {
+        "sourceType": "module",
+        "allowImportExportEverywhere": true
+      //   "ecmaFeatures": {
+      //     "jsx": true
+      // },
+      // "ecmaVersion": "latest"
+      }
+
+    
+}
