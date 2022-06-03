@@ -5,10 +5,10 @@ export default function HeaderTrash() {
   return (
     <header className='header'>
       <span>
-        <h1 className='app-title'>
+        <h1 className='app-title' >
           Trash{' '}
           <img
-            className='header-pencil-trash'
+            className='header-pencil-trash h-20'
             src={pencil}
             alt='pencil-icon'
             height='70px'

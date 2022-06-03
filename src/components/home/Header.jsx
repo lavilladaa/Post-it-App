@@ -8,7 +8,7 @@ export default function Header() {
         <h1 className='app-title'>
           My notes{' '}
           <img
-            className='header-pencil'
+            className='header-pencil h-20'
             src={pencil}
             alt='pencil-icon'
             height='70px'
