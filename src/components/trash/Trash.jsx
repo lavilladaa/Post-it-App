@@ -9,7 +9,6 @@ function Trash () {
     <>
       <HeaderTrash />
       <DeletedNotes />
-      {/* <div id="notes-footer-space"> </div> */}
       <FooterTrash />
     </>
   );

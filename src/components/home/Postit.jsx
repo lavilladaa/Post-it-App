@@ -94,7 +94,8 @@ Postit.propTypes = {
     <div style={{ backgroundColor: colorP }}>
       {/* In case the mode edit is off, should render the original format postit */}
       {!editState ? (
-        <div className='postit'>
+        
+        <div className='flex flex-col justify-between min-h-260 p-0'> 
           <textarea
             className='note-title'
             placeholder='Title...'
@@ -117,26 +118,25 @@ Postit.propTypes = {
             readOnly
           />
 
-          <footer className='note-footer'>
-            <p id='date'>{currentDate}</p>
+          <footer className='flex flex-row justify-between items-center pl-2 h-9'>
+            <p id='date' className='text-sm font-handlee'>{currentDate}</p>
             <input
               type='color'
-              className='color-input'
+              className='w-12 h-5 p-0 ml-24 bg-stone-400 rounded border border-black cursor-pointer'
               list='defaultColors'
               id={id}
               onChange={colorFun}
               value={colorP}
             />
             <datalist id='defaultColors'>
+              <option>#F7EF99</option>
               <option>#D8A9C4</option>
               <option>#93E1D8</option>
-              <option>#F7EF99</option>
               <option>#BBEB9C</option>
               <option>#FEC18B</option>
             </datalist>
             <FaEdit
-              className='button'
-              id='edit-button'
+              className='cursor-pointer ml-2.5'
               size='1.6em'
               color='#656565'
               onMouseOver={({ target }) => (target.style.color = 'black')}
@@ -146,7 +146,7 @@ Postit.propTypes = {
             />
 
             <RiDeleteBin5Line
-              className='button'
+              className='cursor-pointer mr-1'
               size='1.7em'
               color='#656565'
               onMouseOver={({ target }) => (target.style.color = 'black')}
@@ -176,11 +176,12 @@ Postit.propTypes = {
               value={editedText}
            />
 
-            <footer className='note-footer'>
-              <p id='date'>{currentDate}</p>
+            <footer className='flex flex-row justify-between items-center pl-2 h-9'>
+            
+              <p id='date' className='text-sm font-handlee'>{currentDate}</p>
 
               <BiSave
-                className='button'
+                className='cursor-pointer'
                 color='#656565'
                 size='1.7em'
                 onMouseOver={({ target }) => (target.style.color = 'black')}

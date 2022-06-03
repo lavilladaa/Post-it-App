@@ -46,10 +46,10 @@ export default function NewPostit() {
   };
 
   return (
-    <div style={{ backgroundColor: '#D8A9C4' }}>
-      <div className='postit'>
+    <div style={{ backgroundColor: '#F7EF99' }}>
+      <div className='flex flex-col justify-between min-h-260 p-0'>
         <textarea
-          className='note-title'
+          className=' box-border flex flex-col m-0 p-2 border-b border-zinc-500 border-dashed resize-none outline-none w-full h-12 text-center text-xl font-bold font-handlee bg-transparent placeholder-zinc-400'
           placeholder='Title...'
           maxLength='25'
           onChange={titleInfo}
@@ -57,7 +57,7 @@ export default function NewPostit() {
          />
 
         <textarea
-          className='note-text'
+          className='note-text placeholder-zinc-400'
           placeholder='My note...'
           // trying to avoid the note generate the scroll bar
           // so is more similar to how works a postit in the real life
@@ -67,10 +67,10 @@ export default function NewPostit() {
           value={text}
          />
 
-        <footer className='note-footer'>
-          <p id='date'>{currentDate}</p>
+        <footer className='flex flex-row justify-between items-center pl-2 h-9'>
+          <p id='date' className='text-sm font-handlee font-medium'>{currentDate}</p>
           <BiSave
-            className='button'
+            className='cursor-pointer mr-1'
             color='#656565'
             size='1.7em'
             onMouseOver={({ target }) => (target.style.color = 'black')}

@@ -39,6 +39,13 @@ export default function PostitDeleted({ note, title, id }) {
     // to quite the note form the trash page
     dispatch(deleteNoteDef(id));
   };
+
+    // to quit the title if the user does not insert it
+    if (title === '') {
+      // eslint-disable-next-line no-param-reassign
+      title = '   ';
+  }
+  
   let colorP = '#D8A9C4';
   colorList.forEach((element) => {
     if (element.id === id) {
@@ -48,7 +55,7 @@ export default function PostitDeleted({ note, title, id }) {
 
   return (
     <div style={{ backgroundColor: colorP }}>
-      <div className='postit'>
+      <div className='flex flex-col justify-between min-h-260 p-0'>
         <textarea
           className='note-title'
           placeholder='Title...'
@@ -68,15 +75,15 @@ export default function PostitDeleted({ note, title, id }) {
           readOnly
         />
 
-        <footer className='note-footer'>
-          <p id='date'>{currentDate}</p>
+        <footer className='flex flex-row justify-between items-center pl-2 h-9'>
+          <p id='date' className='text-sm font-handlee'>{currentDate}</p>
           {/* to make the restore button redirect to the home page 
         when there is only one post it in the trash page */}
           {length === 1 ? (
             <Link to='/'>
               <MdOutlineRestorePage
-                className='button'
-                id='restore-button'
+                className='cursor-pointer ml-40'
+                // id='restore-button'
                 color='#7f7f81'
                 size='1.7em'
                 onMouseOver={({ target }) => (target.style.color = '#535354')}
@@ -86,8 +93,8 @@ export default function PostitDeleted({ note, title, id }) {
             </Link>
           ) : (
             <MdOutlineRestorePage
-              className='button'
-              id='restore-button'
+              className='cursor-pointer ml-40'
+              // id='restore-button'
               color='#7f7f81'
               size='1.7em'
               onMouseOver={({ target }) => (target.style.color = '#535354')}
@@ -98,7 +105,7 @@ export default function PostitDeleted({ note, title, id }) {
           {length === 1 ? (
             <Link to='/'>
               <MdDeleteForever
-                className='button'
+                className='cursor-pointer'
                 color='#7f7f81'
                 size='1.7em'
                 onMouseOver={({ target }) => (target.style.color = '#535354')}
@@ -108,7 +115,7 @@ export default function PostitDeleted({ note, title, id }) {
             </Link>
           ) : (
             <MdDeleteForever
-              className='button'
+              className='cursor-pointer'
               color='#7f7f81'
               size='1.7em'
               onMouseOver={({ target }) => (target.style.color = '#535354')}

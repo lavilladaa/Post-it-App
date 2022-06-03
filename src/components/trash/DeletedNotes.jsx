@@ -12,7 +12,7 @@ export default function DeletedNotes() {
     // To change the className when there are more than 3 notes
     // so the align content change from left to center
 
-    <div className={deletedList.length >= 3 ? 'multiple-notes' : 'few-notes'}>
+    <div className={deletedList.length >= 3 ? 'notes-list justify-center' : 'notes-list'}>
       {/* to render all the notes created */}
 
       {deletedList.map((element) => (

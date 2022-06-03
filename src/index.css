@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chango&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 body {
   margin: 0;
@@ -16,85 +19,18 @@ body {
 
   /* to add the outline to the text: */
   -webkit-text-stroke: 2px black;
-
+  
 }
 
-
-.postit {
-  /* background-color: #D8A9C4; */
-  background-color: transparent;
-  /* margin:15px; */
-  /* margin-top:0; */
-  /* margin-right:10px; */
-  min-height: 260px;
-  padding: 0rem;
-  display: flex;
-  flex-direction: column;
-  /* To make the content equally spaced
-  between the beginning and the end */
-  justify-content: space-between;
-
-  /* white-space: pre-wrap; */
-}
+/* to customize the title and text style */
 
 .note-title {
-  /* -moz-box-sizing: border-box; 
-  -webkit-box-sizing: border-box; 
-  -ms-box-sizing: border-box;  */
-  /* To take the padding into account
-  and use width=100%  */
-  box-sizing: border-box;
-
-  /* background-color: #E4CAD9; */
-  /* background-color: #D8A9C4; */
-  background-color: transparent;
-  font-size: 18px;
-  padding: 0.5rem;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  border: none;
-  /* border: 1px solid rgb(118, 113, 113); */
-  border-bottom: 1px dashed rgb(118, 113, 113);
-
-  resize: none;
-  outline: none;
-  /* To fit the textarea according
-   to the container width */
-  width: 100%;
-  height: 50px;
-  text-align: center;
-  font-family: 'Handlee', cursive;
-  font-size: 22px;
-  font-weight: bold;
-
+  @apply  box-border flex flex-col m-0 p-2 border-b border-zinc-500 border-dashed resize-none outline-none w-full h-12 text-center text-xl font-bold font-handlee bg-transparent
 }
 
-
-
 .note-text {
-  box-sizing: border-box;
-  /* background-color: #D8A9C4; */
-  background-color: transparent;
-  /* background-color: #aab4bc; */
-  font-size: 16px;
-  padding: 0.5rem;
-  padding-bottom: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  border: none;
-  resize: none;
-  outline: none;
-  /* To fit the textarea according
-   to the container width */
-  width: 100%;
-  height: 190px;
-  text-align: justify;
-  /* to have the cursor in the scroll bar */
-  cursor: auto;
-  font-family: 'Handlee', cursive;
-  font-size: 20px;
+@apply  box-border flex flex-col m-0 px-2 pt-2 pb-0 border-none resize-none outline-none w-full h-48 text-justify text-lg  font-handlee bg-transparent cursor-auto
+
 }
 
 /* To style the scroll bar */
@@ -126,147 +62,13 @@ it is necessary to define first this*/
 
 }
 
-
-.note-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  /* to align vertically */
-  align-items: center;
-  padding-left: 0.5rem;
-  padding-right: 0.1rem;
-  height: 35px;
-
-
-}
-
-#date {
-  font-size: 14px;
-  font-family: 'Handlee', cursive;
-}
-
-/* To style the buttons: save, delete and edit */
-
-.button:hover {
-  cursor: pointer;
-  color: #535354;
-  /* background-color: #7f7f81 */
-}
-
-#edit-button {
-  /* margin-left:1em; */
-  margin-left: 0.6em;
-}
-
-#restore-button {
-  /* margin-left:1em; */
-  margin-left: 10em;
-}
-
-.color-input {
-  width: 50px;
-  height: 20px;
-  padding: 0;
-  margin-left: 7em;
-  background-color: #b5b3b3;
-  border-radius: 4px;
-  /* background-color:white; */
-}
-
-.color-input:hover {
-  cursor: pointer;
+.notes-list{
+  @apply  grid gap-8 m-auto pl-5 pr-2.5 pb-5 grid-cols-290
+  
 }
 
 
-.multiple-notes {
-  justify-content: center;
-}
-
-
-.multiple-notes,
-.few-notes {
-  display: grid;
-  grid-gap: 2em;
-  /* to organize the notes in the screen automatically */
-  grid-template-columns: repeat(auto-fit, 290px);
-
-  margin: auto;
-  padding-left: 20px;
-  padding-right: 10px;
-  /* to make the footer doesn't touch the notes content*/
-  /* so the hover works well on the delete icon */
-  padding-bottom: 20px;
-
-}
-
-
-
-.footer-section {
-  /* background-color:blue; */
-  text-align: right;
-  width: 99%;
-  /* height:0%; */
-  padding: 10px 2px;
-  position: fixed;
-  /* min-height: 0vh; */
-  /* position: relative; */
-  bottom: 0;
-  justify-content: right;
-  /* margin-top:0; */
-
-
-}
-
-.image-button {
-  background-color: transparent;
-  /* background-color: #D8A9C4; */
-  border: none;
-  margin-bottom: 0px;
-  background-image: url("./components/assets/binFull.png");
-  background-size: cover;
-  height: 85px;
-  width: 85px;
-  /* font-size:50px; */
-  margin-right: 10px;
-  justify-content: center;
-  align-items: center;
-  /* position:fixed; */
-
-
-}
-
-.image-button:hover {
-  cursor: pointer;
-}
-
-
-.trash-count {
-  /* background-color:#48CACF; */
-  background-color: transparent;
-  width: 30px;
-  /* position:fixed; */
-  /* text-align:center; */
-  /* justify-content:center;  */
-  margin-left: 19px;
-  margin-top: 20px;
-  padding: 0;
-  font-size: 25px;
-  font-weight: bolder;
-  font-family: 'Chango', cursive;
+.count-outline {
   -webkit-text-stroke: 1.5px white;
-  /* color:purple; */
-  color: #7A056F;
-
-  /* margin-bottom:100px; */
 }
 
-.icon-button {
-  border: none;
-  background-color: transparent;
-  margin-right: 14px;
-}
-
-.icon-button:hover {
-  cursor: pointer;
-
-}
