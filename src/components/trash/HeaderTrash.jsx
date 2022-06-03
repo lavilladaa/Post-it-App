@@ -3,12 +3,12 @@ import pencil from '../assets/pencil.png';
 
 export default function HeaderTrash() {
   return (
-    <header className='header'>
+    <header>
       <span>
-        <h1 className='app-title' >
+        <h1 className='app-title p-1 mb-5 mx-auto h-20 w-full text-blue-aqua text-center font-leckerli-one text-6xl' >
           Trash{' '}
           <img
-            className='header-pencil-trash h-20'
+            className='mb-8 -ml-2 h-70 rotate-30 inline-block'
             src={pencil}
             alt='pencil-icon'
             height='70px'
