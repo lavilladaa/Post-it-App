@@ -43,7 +43,7 @@ export default function NewPostit() {
       setText('');
       setTitle('');
     } else {
-      // alert('Please enter a text in the Post-it');
+      // using swal to make the alert prettier
       swal({
         text:'Please enter a text in the Post-it',
         icon:'error',

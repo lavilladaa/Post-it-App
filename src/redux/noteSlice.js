@@ -49,24 +49,20 @@ export const notesSlice = createSlice({
   initialState: initialList,
   reducers: {
     addNote: (state, action) => {
-      // taking the notes created:
+      
       // eslint-disable-next-line quotes
+      // taking the notes created from the local storage:
       const notesList = window.localStorage.getItem('notesList');
 
       const postitsList = JSON.parse(notesList);
-      // const colorList = window.localStorage.getItem("colorList");
-      // const colorPostits = JSON.parse(colorList);
 
-      // colorPostits.push({ ...action.payload });
       // to take all the notes already created
       postitsList.push({ ...action.payload });
 
       state.notesList.push(action.payload);
       // to update the localStorage
       window.localStorage.setItem('notesList', JSON.stringify(postitsList));
-      // state.colorList.push(action.payload.id);
-      // to update the localStorage
-      // window.localStorage.setItem("colorList", JSON.stringify(colorPostits));
+
     },
 
     deleteNote: (state, action) => {
