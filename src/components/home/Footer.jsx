@@ -1,14 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import swal from 'sweetalert';
 import trash from '../assets/trash.png';
+
 
 export default function Footer() {
   const deletedList = useSelector((state) => state.note.deletedList);
   const { length } = deletedList;
 
   const alertTrash = () => {
-    alert('The Trash is empty');
+  
+    swal({
+      text:'The trash is empty',
+      icon:'info',
+    })
+   
   };
 
   return (

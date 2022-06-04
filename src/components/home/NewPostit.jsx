@@ -1,9 +1,11 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-return-assign */
 import {React,useState} from 'react';
-import { useDispatch } from 'react-redux';
 import { BiSave } from 'react-icons/bi';
+import swal from 'sweetalert';
+import { useDispatch } from 'react-redux';
 import { addNote, createColorsId } from '../../redux/noteSlice';
+
 
 export default function NewPostit() {
   const [text, setText] = useState('');
@@ -41,7 +43,11 @@ export default function NewPostit() {
       setText('');
       setTitle('');
     } else {
-      alert('Please enter a text in the Post-it');
+      // alert('Please enter a text in the Post-it');
+      swal({
+        text:'Please enter a text in the Post-it',
+        icon:'error',
+      })
     }
   };
 
