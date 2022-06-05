@@ -75,5 +75,7 @@ Start the server
 ```bash
   npm run start
 ```
-![Algorithm schema](./src/components/assets/pencil.png)
+## App screen
+![Algorithm schema](./src/components/assets/screenApp.PNG)
+
 
