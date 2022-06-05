@@ -72,3 +72,28 @@ it is necessary to define first this*/
   -webkit-text-stroke: 1.5px white;
 }
 
+.postit{
+  @apply flex flex-col justify-between min-h-260 p-0
+}
+
+ /* @media (max-width: 600px) {
+  
+   
+  .notes-list{
+    @apply  block;
+    
+  } 
+
+  .postit-container{
+    @apply my-10 mx-auto w-10/12
+  }
+
+
+  
+  .note-text {
+  @apply  box-border m-0 px-2 pt-2 pb-0 border-none outline-none w-full h-60 text-justify text-lg  font-handlee bg-transparent cursor-auto
+  
+  }
+   
+
+}  */

@@ -55,7 +55,7 @@ export default function PostitDeleted({ note, title, id }) {
 
   return (
     <div style={{ backgroundColor: colorP }}>
-      <div className='flex flex-col justify-between min-h-260 p-0'>
+      <div className='postit'>
         <textarea
           className='note-title'
           placeholder='Title...'

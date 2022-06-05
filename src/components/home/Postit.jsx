@@ -91,11 +91,11 @@ Postit.propTypes = {
   });
 
   return (
-    <div style={{ backgroundColor: colorP }}>
+    <div style={{ backgroundColor: colorP }} className='postit-container'>
       {/* In case the mode edit is off, should render the original format postit */}
       {!editState ? (
         
-        <div className='flex flex-col justify-between min-h-260 p-0'> 
+        <div className='postit'> 
           <textarea
             className='note-title'
             placeholder='Title...'
