@@ -7,7 +7,9 @@
         "Postits"
     ],
     "cSpell.ignoreWords": [
+        "browserslist",
         "swal",
-        "sweetalert"
+        "sweetalert",
+        "tailwindcss"
     ]
 }
