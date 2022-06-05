@@ -104,7 +104,6 @@ Postit.propTypes = {
             value={title}
             onChange={titleNew}
             // to avoid the warning
-            
             // "You provided a `value` prop to a form field without an `onChange` handler."
             readOnly
            />
@@ -167,7 +166,6 @@ Postit.propTypes = {
               onChange={titleNew}
               // to set the edited title
               value={editedTitle}
-              
             />
 
             <textarea

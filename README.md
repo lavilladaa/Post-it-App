@@ -2,7 +2,7 @@
 # Post-it notes App 
 
 This application was developed as a part of the final project of
-the bootcamp in Moove it (Moovecamp). 
+the bootcamp in Moove it (MooveCamp). 
 The project applies all the tools seen in the classes 
 like git, Git-Hub, HTML, CSS, JavaScript and
 React using Redux, LocalStorage and React-Router-dom. 
@@ -75,5 +75,6 @@ Start the server
 ```bash
   npm run start
 ```
-![Algorithm schema](./src/components/assets/pencil.png)
+## App screen
+![Algorithm schema](./src/components/assets/screenApp.PNG)
 

@@ -73,7 +73,6 @@ export default function PostitDeleted({ note, title, id }) {
           maxLength='230'
           // to associate the state value
           value={note}
-          
           readOnly
         />
 
