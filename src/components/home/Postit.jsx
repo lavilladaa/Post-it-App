@@ -123,7 +123,7 @@ Postit.propTypes = {
             <p id='date' className='text-sm font-handlee'>{currentDate}</p>
             <input
               type='color'
-              className='w-12 h-5 p-0 ml-24 bg-stone-400 rounded border border-black cursor-pointer'
+              className='w-12 h-5 p-0 md:ml-24 bg-stone-400 rounded border border-black cursor-pointer'
               list='defaultColors'
               id={id}
               onChange={colorFun}
@@ -137,7 +137,7 @@ Postit.propTypes = {
               <option>#FEC18B</option>
             </datalist>
             <FaEdit
-              className='cursor-pointer ml-2.5'
+              className='cursor-pointer ml-2.5 '
               size='1.6em'
               color='#656565'
               onMouseOver={({ target }) => (target.style.color = 'black')}

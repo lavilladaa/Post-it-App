@@ -90,7 +90,7 @@ it is necessary to define first this*/
 }
  /* @media (max-width: 600px) and (min-width: 400px) { */
   
-  @media only screen and (max-device-width: 600px) {  
+  @media only screen and (max-device-width: 480px) {  
   .notes-list{
     @apply  block;
     
