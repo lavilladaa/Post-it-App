@@ -1,70 +1,79 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Post-it notes App 
 
-## Available Scripts
+This application was developed as a part of the final project of
+the bootcamp in Moove it (Moovecamp). 
+The project applies all the tools seen in the classes 
+like git, Git-Hub, HTML, CSS, JavaScript and
+React using Redux, LocalStorage and React-Router-dom. 
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The application allows to do post-it notes with a title and
+a body text. 
 
-### `npm test`
+- The post-it can be saved without the title. 
+- If the body text of the post-it is empty, an alert is shown when the save button is clicked.
+- The color of the post-it can be changed.
+- The post-it created can be edited.
+- The post-it can be deleted by sending it to the trash.
+- In the trash icon in the home page, it is possible to see how many post-its have been deleted or if there are no post-its deleted.
+- If the empty trash icon is clicked when there are no deleted post-its, an alert is shown. 
+- The post-it can be restore from the trash to the Home.
+- The post-it can be deleted permanently from the Trash.
+- In the Trash page there is an icon to redirect to the Home page.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Code Style
 
-### `npm run build`
+The application follows the airbnb style guide 
+using eslint to check the file automatically with the 
+eslint-config-airbnb. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* [Node.js](https://nodejs.org/es/): v18.2.0
+* [React](https://reactjs.org/): v18.1.0
+* [React Redux](https://react-redux.js.org): v8.0.2
+* [Redux Toolkit](https://redux-toolkit.js.org/): v1.8.2
+* [React Router](https://reactrouter.com/docs/en/v6): v6.3.0
+* [React Scripts](https://www.npmjs.com/package/react-scripts): v5.0.1
+* [PropTypes](https://www.npmjs.com/package/prop-types): v15.8.1
+* [React Icons](https://react-icons.github.io/react-icons/): v4.3.1
 
-### `npm run eject`
+### Dev Dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* [ESLint](https://eslint.org/docs/user-guide/getting-started): v8.2.0
+* [Babel](https://www.npmjs.com/package/@babel/core): v7.18.2
+* [tailwindcss](https://tailwindcss.com/docs/guides/create-react-app): v3.0.24
+* [Prettier](https://prettier.io/docs/en/install.html): v2.6.2
+## Run Locally
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Clone the project
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+  git clone https://github.com/lavilladaa/project-postit-notes.git
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Go to the project directory
 
-## Learn More
+```bash
+  cd the-project
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Install dependencies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+  npm install
+```
 
-### Code Splitting
+Start the server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+  npm run start
+```
+![Algorithm schema](./src/components/assets/pencil.png)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
