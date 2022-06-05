@@ -38,7 +38,7 @@ export default function NewPostit() {
       };
 
       dispatch(addNote(newPostit));
-      dispatch(createColorsId({ id: newPostit.id, color: '#D8A9C4' }));
+      dispatch(createColorsId({ id: newPostit.id, color: '#F7EF99' }));
       // to reset the note
       setText('');
       setTitle('');

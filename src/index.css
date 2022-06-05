@@ -63,7 +63,7 @@ it is necessary to define first this*/
 }
 
 .notes-list{
-  @apply  grid gap-8 m-auto pl-5 pr-2.5 pb-5 grid-cols-290
+  @apply  grid gap-8 m-auto pl-5 pr-2.5 pb-24 grid-cols-290
   
 }
 
