@@ -80,9 +80,9 @@ it is necessary to define first this*/
   @apply text-right w-full py-2 px-1 fixed bottom-0 
 }
 
- @media (max-width: 600px) {
+ /* @media (max-width: 600px) and (min-width: 400px) { */
   
-   
+  @media only screen and (max-device-width: 600px) {  
   .notes-list{
     @apply  block;
     
