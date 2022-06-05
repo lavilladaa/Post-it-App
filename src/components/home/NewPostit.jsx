@@ -52,7 +52,7 @@ export default function NewPostit() {
   };
 
   return (
-    <div style={{ backgroundColor: '#F7EF99' }}>
+    <div style={{ backgroundColor: '#F7EF99' }} className='postit-container'>
       <div className='postit'>
         <textarea
           className=' box-border flex flex-col m-0 p-2 border-b border-zinc-500 border-dashed resize-none outline-none w-full h-12 text-center text-xl font-bold font-handlee bg-transparent placeholder-zinc-400'

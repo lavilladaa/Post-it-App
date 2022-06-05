@@ -54,7 +54,7 @@ export default function PostitDeleted({ note, title, id }) {
   });
 
   return (
-    <div style={{ backgroundColor: colorP }}>
+    <div style={{ backgroundColor: colorP }} className='postit-container'>
       <div className='postit'>
         <textarea
           className='note-title'

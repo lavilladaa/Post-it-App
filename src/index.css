@@ -76,7 +76,11 @@ it is necessary to define first this*/
   @apply flex flex-col justify-between min-h-260 p-0
 }
 
- /* @media (max-width: 600px) {
+.footer{
+  @apply text-right w-full py-2 px-1 fixed bottom-0 
+}
+
+ @media (max-width: 600px) {
   
    
   .notes-list{
@@ -95,5 +99,9 @@ it is necessary to define first this*/
   
   }
    
+  .footer{
+    @apply text-right w-full py-2 px-1 relative bottom-0
+  }
+  
 
-}  */
+} 
