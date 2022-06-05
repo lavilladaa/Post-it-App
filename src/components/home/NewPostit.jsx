@@ -60,7 +60,7 @@ export default function NewPostit() {
           maxLength='25'
           onChange={titleInfo}
           value={title}
-          lang="en"
+          
          />
 
         <textarea
@@ -72,7 +72,7 @@ export default function NewPostit() {
           onChange={noteInfo}
           // to associate the state value
           value={text}
-          lang="en"
+          
          />
 
         <footer className='flex flex-row justify-between items-center pl-2 h-9'>

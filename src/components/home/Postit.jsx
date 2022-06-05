@@ -104,7 +104,7 @@ Postit.propTypes = {
             value={title}
             onChange={titleNew}
             // to avoid the warning
-            lang="en"
+            
             // "You provided a `value` prop to a form field without an `onChange` handler."
             readOnly
            />
@@ -116,7 +116,7 @@ Postit.propTypes = {
             // to take the note text from the NewPostit component.
             value={note}
             onChange={noteNew}
-            lang="en"
+            
             readOnly
           />
 
@@ -167,7 +167,7 @@ Postit.propTypes = {
               onChange={titleNew}
               // to set the edited title
               value={editedTitle}
-              lang="en"
+              
             />
 
             <textarea
@@ -177,7 +177,7 @@ Postit.propTypes = {
               onChange={noteNew}
               // to set the edited text in the note
               value={editedText}
-              lang="en"
+              
            />
 
             <footer className='flex flex-row justify-between items-center pl-2 h-9'>
