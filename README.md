@@ -37,19 +37,18 @@ eslint-config-airbnb.
 
 * [Node.js](https://nodejs.org/es/): v18.2.0
 * [React](https://reactjs.org/): v18.1.0
-* [React Redux](https://react-redux.js.org): v8.0.2
-* [Redux Toolkit](https://redux-toolkit.js.org/): v1.8.2
-* [React Router](https://reactrouter.com/docs/en/v6): v6.3.0
-* [React Scripts](https://www.npmjs.com/package/react-scripts): v5.0.1
-* [PropTypes](https://www.npmjs.com/package/prop-types): v15.8.1
-* [React Icons](https://react-icons.github.io/react-icons/): v4.3.1
+* [React Redux](https://react-redux.js.org): v8.0.2. To use global states.
+* [Redux Toolkit](https://redux-toolkit.js.org/): v1.8.2 To create a Slice to have all the actions and the reducers together.
+* [React Router](https://reactrouter.com/docs/en/v6): v6.3.0. To link the Home and the Trash pages.
+* [PropTypes](https://www.npmjs.com/package/prop-types): v15.8.1. To check the types of the props to fill the ESLint requirements.
+* [React Icons](https://react-icons.github.io/react-icons/): v4.3.1. For the save, edit, restore and delete buttons.
 
 ### Dev Dependencies
 
-* [ESLint](https://eslint.org/docs/user-guide/getting-started): v8.2.0
-* [Babel](https://www.npmjs.com/package/@babel/core): v7.18.2
-* [tailwindcss](https://tailwindcss.com/docs/guides/create-react-app): v3.0.24
-* [Prettier](https://prettier.io/docs/en/install.html): v2.6.2
+* [ESLint](https://eslint.org/docs/user-guide/getting-started): v8.2.0. To check the code styling with the airbnb guide.
+* [Babel](https://www.npmjs.com/package/@babel/core): v7.18.2. To transpile the JS code for the browser.
+* [tailwindcss](https://tailwindcss.com/docs/guides/create-react-app): v3.0.24. To make the CSS styling 
+* [Prettier](https://prettier.io/docs/en/install.html): v2.6.2. To format the code automatically.
 ## Run Locally
 
 Clone the project
