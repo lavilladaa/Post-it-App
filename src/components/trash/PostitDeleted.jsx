@@ -62,7 +62,7 @@ export default function PostitDeleted({ note, title, id }) {
           maxLength='40'
           value={title}
           // to avoid the warning
-          lang="en"
+          
           // "You provided a `value` prop to a form field without an `onChange` handler."
           readOnly
         />
@@ -73,7 +73,7 @@ export default function PostitDeleted({ note, title, id }) {
           maxLength='230'
           // to associate the state value
           value={note}
-          lang="en"
+        
           readOnly
         />
 
