@@ -1,13 +1,12 @@
 
 # Post-it notes App 
 
-The post-it notes application was developed to create notes with a title and a body text. 
-It has a responsive design so it could be used also from a mobile device. It was deployed in Heroku and
-is available in the link: https://postit-notes-project.herokuapp.com/
+The post-it notes application was developed to create notes with a title and body text. 
+The application has a responsive design, so it can be used on mobile devices as well. It was deployed in Heroku and is available at the link: https://postit-notes-project.herokuapp.com/
 
-This application is the  the final project of the bootcamp in Moove it (MooveCamp). 
+This application is the final project of the Bootcamp in Moove it (MooveCamp). 
 The project applies all the tools seen in the classes like git, Git-Hub, HTML, CSS, JavaScript and
-React using Redux, LocalStorage and React-Router-dom. 
+React using Redux, LocalStorage, and React-Router-dom. 
 
 ## Features
 
@@ -16,12 +15,12 @@ React using Redux, LocalStorage and React-Router-dom.
 - The color of the post-it can be changed.
 - The post-it created can be edited.
 - The post-it can be deleted by sending it to the trash.
-- In the trash icon in the home page, it is possible to see how many post-its have been deleted or if there are no post-its deleted.
+- In the trash icon on the home page, it is possible to see how many post-its have been deleted or if there are no post-its deleted.
 - If the empty trash icon is clicked when there are no deleted post-its, an alert is shown. 
-- The post-it can be restore from the trash to the Home.
+- The post-it can be restored from the Trash to the Home.
 - The post-it can be deleted permanently from the Trash.
-- In case the last post-it in the Trash is deleted permanently or restored by clicking the delete or restore button the user will redirect to the Home page.
-- In the Trash page there is button to redirect to the Home page.
+- In case the last post-it in the Trash is deleted permanently or restored by clicking the delete or restore button, the user will be redirected to the Home page.
+- On the Trash page there is button to redirect to the Home page.
 
 ## Code Style
 
@@ -38,7 +37,7 @@ eslint-config-airbnb.
 * [React Redux](https://react-redux.js.org): v8.0.2. To use global states.
 * [Redux Toolkit](https://redux-toolkit.js.org/): v1.8.2 To create a Slice to have all the actions and the reducers together.
 * [React Router](https://reactrouter.com/docs/en/v6): v6.3.0. To link the Home and the Trash pages.
-* [PropTypes](https://www.npmjs.com/package/prop-types): v15.8.1. To check the types of the props to fill the ESLint requirements.
+* [PropTypes](https://www.npmjs.com/package/prop-types): v15.8.1. To check the types of props to fill the ESLint requirements.
 * [React Icons](https://react-icons.github.io/react-icons/): v4.3.1. For the save, edit, restore and delete buttons.
 
 ### Dev Dependencies
@@ -47,6 +46,7 @@ eslint-config-airbnb.
 * [Babel](https://www.npmjs.com/package/@babel/core): v7.18.2. To transpile the JS code for the browser.
 * [tailwindcss](https://tailwindcss.com/docs/guides/create-react-app): v3.0.24. To make the CSS styling 
 * [Prettier](https://prettier.io/docs/en/install.html): v2.6.2. To format the code automatically.
+
 ## Run Locally
 
 Clone the project

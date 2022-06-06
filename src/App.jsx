@@ -11,9 +11,11 @@ function App() {
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
+         
           <Route path='/' element={<Home />} />
 
           <Route path='/trash' element={<Trash />} />
+          
         </Routes>
       </BrowserRouter>
     </Provider>
