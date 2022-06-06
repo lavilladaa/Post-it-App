@@ -40,8 +40,7 @@ const getColorPostit = () => {
 const getBackState = () => {
  const localBackState=window.localStorage.getItem('backState');
  if (localBackState) {
-  console.log(localBackState);
-  console.log(JSON.parse(localBackState));
+
   return JSON.parse(localBackState);
 
   
