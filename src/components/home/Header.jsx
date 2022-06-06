@@ -1,7 +1,32 @@
-import React from 'react';
+import React,{useState} from 'react';
 import pencil from '../assets/pencil.png';
+import wallDark from '../assets/wallDark.jpg';
+import wallLight from '../assets/wallLight.jpg'
+// import wall from '../assets/wall.png';
+
 
 export default function Header() {
+  const [editState, setEditState] = useState(false);
+   
+
+  // document.body.style.backgroundImage = `url(${wallLight})`;
+  
+  
+
+  const changeBackground =()=> {
+       setEditState(!editState);
+         
+  }
+
+  if (editState===true){
+    
+    document.body.style.backgroundImage = `url(${wallDark})`;
+    
+  } else{
+    
+    document.body.style.backgroundImage = `url(${wallLight})`;
+  }
+
   return (
     <header  className='flex flex-cols mx-auto'>
       
@@ -16,7 +41,7 @@ export default function Header() {
           />
           
         </h1>
-        <button type='button' className='mr-3 -ml-8 mt-5 px-2  bg-stone-400 rounded-lg font-bold font-handlee text-black w-auto h-10 border border-black'>Background</button>
+        <button type='button' className='mr-3 -ml-8 mt-5 px-2  bg-stone-400 rounded-lg font-bold font-handlee text-black w-auto h-10 border border-black' onClick={changeBackground}>Background</button>
 
               
     </header>

@@ -6,10 +6,14 @@ import Home from './components/home/Home';
 // import DeletedNotes from "./components/DeletedNotes";
 import Trash from './components/trash/Trash';
 
+
+
 function App() {
   return (
+    
+    
     <Provider store={store}>
-      <BrowserRouter>
+    <BrowserRouter>
         <Routes>
          
           <Route path='/' element={<Home />} />
@@ -19,6 +23,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </Provider>
+    
   );
 }
 

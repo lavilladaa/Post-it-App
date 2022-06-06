@@ -32,7 +32,7 @@ export default function Footer() {
           </Link>
         </footer>
       ) : (
-        <footer className='footer'>
+        <footer className={notesList.length>3? 'footer pos-rel':'footer pos-fix'}>
           <button className='border-none bg-transparent mr-3.5 cursor-pointer' onClick={alertTrash} type="button">
             <img src={trash} width='70px' alt='Trash' />
           </button>
