@@ -40,12 +40,15 @@ const getColorPostit = () => {
 const getBackState = () => {
  const localBackState=window.localStorage.getItem('backState');
  if (localBackState) {
-  // to parse the notes list if there is one in the localStorage
+  console.log(localBackState);
+  console.log(JSON.parse(localBackState));
+  return JSON.parse(localBackState);
 
-  return window.localStorage.setItem('backState', localBackState);
+  
 }
 
-return window.localStorage.setItem('backState', false);
+window.localStorage.setItem('backState', JSON.stringify(false));
+return false;
 
 }
 
@@ -185,7 +188,7 @@ export const notesSlice = createSlice({
       state.backState=!backgroundState;
       // to update the localStorage
       
-      window.localStorage.setItem('backState',backgroundState);
+      window.localStorage.setItem('backState',JSON.stringify(!backgroundState));
 
     },
   },

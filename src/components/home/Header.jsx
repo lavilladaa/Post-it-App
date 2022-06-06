@@ -12,11 +12,11 @@ export default function Header() {
   // the background state has to be a global state to keep the background 
   // when the user is redirecting from the trash to the home page
   const backState = useSelector((state) => state.note.backState);
+  
   const dispatch = useDispatch();
    
   const changeBack =()=> {
       dispatch(changeBackground(backState));
-         
   }
 
   if (backState===true){
