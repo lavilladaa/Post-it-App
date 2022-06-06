@@ -1,18 +1,15 @@
 
 # Post-it notes App 
 
-This application was developed as a part of the final project of
-the bootcamp in Moove it (MooveCamp). 
-The project applies all the tools seen in the classes 
-like git, Git-Hub, HTML, CSS, JavaScript and
+The post-it notes application was developed to create notes with a title and a body text. 
+It has a responsive design so it could be used also from a mobile device. It was deployed in Heroku and
+is available in the link: https://postit-notes-project.herokuapp.com/
+
+This application is the  the final project of the bootcamp in Moove it (MooveCamp). 
+The project applies all the tools seen in the classes like git, Git-Hub, HTML, CSS, JavaScript and
 React using Redux, LocalStorage and React-Router-dom. 
 
-
-
 ## Features
-
-The application allows to do post-it notes with a title and
-a body text. 
 
 - The post-it can be saved without the title. 
 - If the body text of the post-it is empty, an alert is shown when the save button is clicked.
@@ -23,7 +20,8 @@ a body text.
 - If the empty trash icon is clicked when there are no deleted post-its, an alert is shown. 
 - The post-it can be restore from the trash to the Home.
 - The post-it can be deleted permanently from the Trash.
-- In the Trash page there is an icon to redirect to the Home page.
+- In case the last post-it in the Trash is deleted permanently or restored by clicking the delete or restore button the user will redirect to the Home page.
+- In the Trash page there is button to redirect to the Home page.
 
 ## Code Style
 

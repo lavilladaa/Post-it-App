@@ -24,7 +24,7 @@ export default function Footer() {
     <>
     {/* to know if there are any postit deleted */}
       {length > 0 ? (
-        <footer className={notesList.length>=4 ? 'footer pos-rel':'footer pos-fix'}>
+        <footer className={notesList.length>3? 'footer pos-rel':'footer pos-fix'}>
           <Link to='/trash'>
             <button className='bg-transparent border-none mb-0 mr-2 bg-bin-full bg-cover h-85 w-85 justify-center items-center cursor-pointer' type="button">
                <div className='count-outline bg-transparent w-8 mx-auto mt-5 p-0 text-2xl font-bold font-chango text-purple-count'>{length}</div>

@@ -64,7 +64,7 @@ it is necessary to define first this*/
 }
 
 .notes-list{
-  @apply  grid gap-8 m-auto pl-5 pr-2.5 pb-3 grid-cols-290
+  @apply  grid gap-8 m-auto pl-5 pr-2.5 pb-24 grid-cols-290
   
 }
 
@@ -88,16 +88,16 @@ it is necessary to define first this*/
 .pos-fix{
   @apply fixed
 }
- /* @media (max-width: 600px) and (min-width: 400px) { */
-  
-  @media only screen and (max-device-width: 480px) {  
+ 
+  /* To make the media query works in Heroku url is used the "only":*/
+  @media only screen and (max-device-width: 740px) {  
   .notes-list{
-    @apply  block;
+    @apply  block pb-0;
     
   } 
 
   .postit-container{
-    @apply my-10 m-auto w-10/12
+    @apply my-10 m-auto w-10/12 max-w-sm
   }
 
 

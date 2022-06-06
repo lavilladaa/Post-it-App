@@ -130,11 +130,14 @@ Postit.propTypes = {
               value={colorP}
             />
             <datalist id='defaultColors'>
-              <option>#F7EF99</option>
-              <option>#D8A9C4</option>
-              <option>#93E1D8</option>
-              <option>#BBEB9C</option>
-              <option>#FEC18B</option>
+              <option>#F7EF99</option> {/* yellow */}
+              <option>#D8A9C4</option> {/* purple */}
+              <option>#93E1D8</option> {/* blue */}
+              <option>#BBEB9C</option> {/* green */}
+              <option>#FEC18B</option> {/* orange */}
+              <option>#EFAAC0</option> {/* pink */}
+              <option>#D1EAF9</option> {/* light blue */}
+              <option>#C0C0C0</option> {/* gray */}
             </datalist>
             <FaEdit
               className='cursor-pointer ml-2.5 '
