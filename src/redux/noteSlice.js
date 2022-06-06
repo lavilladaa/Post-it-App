@@ -37,11 +37,24 @@ const getColorPostit = () => {
   return [];
 };
 
+const getBackState = () => {
+ const localBackState=window.localStorage.getItem('backState');
+ if (localBackState) {
+  // to parse the notes list if there is one in the localStorage
+
+  return window.localStorage.setItem('backState', localBackState);
+}
+
+return window.localStorage.setItem('backState', false);
+
+}
+
 const initialList = {
   // creating a function to obtain the initial postits from the local storage.
   notesList: getInitialPostits(),
   deletedList: getDeletedPostits(),
   colorList: getColorPostit(),
+  backState:getBackState(),
 };
 
 export const notesSlice = createSlice({
@@ -164,6 +177,17 @@ export const notesSlice = createSlice({
       // to update the localStorage
       window.localStorage.setItem('colorList', JSON.stringify(colorPostits));
     },
+
+    changeBackground: (state, action) => {
+      
+     const backgroundState = action.payload;
+
+      state.backState=!backgroundState;
+      // to update the localStorage
+      
+      window.localStorage.setItem('backState',backgroundState);
+
+    },
   },
 });
 
@@ -174,5 +198,6 @@ export const {
   deleteNoteDef,
   colorChange,
   createColorsId,
+  changeBackground
 } = notesSlice.actions;
 export default notesSlice.reducer;

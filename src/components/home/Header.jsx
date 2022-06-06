@@ -1,24 +1,25 @@
-import React,{useState} from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeBackground } from  '../../redux/noteSlice';
 import pencil from '../assets/pencil.png';
 import wallDark from '../assets/wallDark.jpg';
 import wallLight from '../assets/wallLight.jpg'
+
 // import wall from '../assets/wall.png';
 
 
 export default function Header() {
-  const [editState, setEditState] = useState(false);
+  // the background state has to be a global state to keep the background 
+  // when the user is redirecting from the trash to the home page
+  const backState = useSelector((state) => state.note.backState);
+  const dispatch = useDispatch();
    
-
-  // document.body.style.backgroundImage = `url(${wallLight})`;
-  
-  
-
-  const changeBackground =()=> {
-       setEditState(!editState);
+  const changeBack =()=> {
+      dispatch(changeBackground(backState));
          
   }
 
-  if (editState===true){
+  if (backState===true){
     
     document.body.style.backgroundImage = `url(${wallDark})`;
     
@@ -37,11 +38,10 @@ export default function Header() {
             className='mb-8 ml-1 h-70 rotate-30 inline-block'
             src={pencil}
             alt='pencil-icon'
-            // height='70px'
           />
           
         </h1>
-        <button type='button' className='mr-3 -ml-8 mt-5 px-2  bg-stone-400 rounded-lg font-bold font-handlee text-black w-auto h-10 border border-black' onClick={changeBackground}>Background</button>
+        <button type='button' className='mr-3 -ml-8 mt-5 px-2  bg-stone-400 rounded-lg font-bold font-handlee text-black w-auto h-10 border border-black' onClick={changeBack}>Background</button>
 
               
     </header>
