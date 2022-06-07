@@ -29,8 +29,8 @@ export default function Header() {
   }
 
   return (
-    <header  className='flex flex-cols mx-auto'>
-      
+    <header  className='header-display mx-auto'>
+  
         {/* <h1 className='app-title'> */}
         <h1 className='app-title p-1 mb-5 mx-auto h-20 w-full text-blue-aqua text-center font-leckerli-one text-6xl'>
           My notes
@@ -41,8 +41,8 @@ export default function Header() {
           />
           
         </h1>
-        <button type='button' className='mr-3 -ml-8 mt-5 px-2  bg-stone-400 rounded-lg font-bold font-handlee text-black w-auto h-10 border border-black' onClick={changeBack}>Background</button>
-
+        {/* <button type='button' className='mr-3 -ml-8 mt-5 px-2  bg-stone-400 rounded-lg font-bold font-handlee text-black w-auto h-10 border border-black' onClick={changeBack}>Background</button> */}
+        <button type='button' className='button-background' onClick={changeBack}>Background</button>
               
     </header>
   );
