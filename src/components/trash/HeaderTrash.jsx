@@ -1,7 +1,25 @@
 import React from 'react';
+import {useSelector } from 'react-redux';
 import pencil from '../assets/pencil.png';
+import wallDark from '../assets/wallDark.jpg';
+import wallLight from '../assets/wallLight.jpg'
+
 
 export default function HeaderTrash() {
+  // to make the background renders in case the page is refreshed
+  const backState = useSelector((state) => state.note.backState);
+ 
+  document.body.style.backgroundImage = `url(${wallDark})`;
+
+  if (backState===true){
+    
+    document.body.style.backgroundImage = `url(${wallDark})`;
+    
+  } else{
+    
+    document.body.style.backgroundImage = `url(${wallLight})`;
+  }
+
   return (
     <header>
       <span>
