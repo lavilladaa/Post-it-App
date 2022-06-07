@@ -24,9 +24,11 @@ export default function PostitDeleted({ note, title, id }) {
   const {length} = deletedList; // length = deletedList.length;
   // to take only the date without the time:
   const currentDate = new Date().toLocaleDateString();
-  
+
   const deleteDef = () => {
+  
     dispatch(deleteNoteDef(id));
+   
   };
 
   const restoreNote = () => {
@@ -53,6 +55,8 @@ export default function PostitDeleted({ note, title, id }) {
       colorP = element.color;
     }
   });
+
+
 
   return (
     <div style={{ backgroundColor: colorP }} className='postit-container'>
@@ -104,7 +108,7 @@ export default function PostitDeleted({ note, title, id }) {
               onClick={restoreNote}
             />
           )}
-          {length === 1 ? (
+          {length === 1? (
             <Link to='/'>
               <MdDeleteForever
                 className='cursor-pointer'

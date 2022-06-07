@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import swal from 'sweetalert';
+import Swal from 'sweetalert2'
 import trash from '../assets/trash.png';
 
 
@@ -13,9 +13,10 @@ export default function Footer() {
 
   const alertTrash = () => {
   
-    swal({
+    Swal.fire({
       text:'The trash is empty',
       icon:'info',
+      confirmButtonColor: '#7A056F',
     })
    
   };

@@ -2,7 +2,7 @@
 /* eslint-disable no-return-assign */
 import {React,useState} from 'react';
 import { BiSave } from 'react-icons/bi';
-import swal from 'sweetalert';
+import Swal from 'sweetalert2'
 import { useDispatch } from 'react-redux';
 import { addNote, createColorsId } from '../../redux/noteSlice';
 
@@ -44,9 +44,10 @@ export default function NewPostit() {
       setTitle('');
     } else {
       // using swal to make the alert prettier
-      swal({
+      Swal.fire({
         text:'Please enter a text in the Post-it',
         icon:'error',
+        confirmButtonColor: '#7A056F',
       })
     }
   };

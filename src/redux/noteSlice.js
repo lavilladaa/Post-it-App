@@ -38,25 +38,21 @@ const getColorPostit = () => {
 };
 
 const getBackState = () => {
- const localBackState=window.localStorage.getItem('backState');
- if (localBackState) {
+  const localBackState = window.localStorage.getItem('backState');
+  if (localBackState) {
+    return JSON.parse(localBackState);
+  }
 
-  return JSON.parse(localBackState);
-
-  
-}
-
-window.localStorage.setItem('backState', JSON.stringify(false));
-return false;
-
-}
+  window.localStorage.setItem('backState', JSON.stringify(false));
+  return false;
+};
 
 const initialList = {
   // creating a function to obtain the initial postits from the local storage.
   notesList: getInitialPostits(),
   deletedList: getDeletedPostits(),
   colorList: getColorPostit(),
-  backState:getBackState(),
+  backState: getBackState(),
 };
 
 export const notesSlice = createSlice({
@@ -64,7 +60,6 @@ export const notesSlice = createSlice({
   initialState: initialList,
   reducers: {
     addNote: (state, action) => {
-      
       // eslint-disable-next-line quotes
       // taking the notes created from the local storage:
       const notesList = window.localStorage.getItem('notesList');
@@ -77,7 +72,6 @@ export const notesSlice = createSlice({
       state.notesList.push(action.payload);
       // to update the localStorage
       window.localStorage.setItem('notesList', JSON.stringify(postitsList));
-
     },
 
     deleteNote: (state, action) => {
@@ -145,7 +139,6 @@ export const notesSlice = createSlice({
       );
 
       // to update the state
-
       state.deletedList = postitsDeleted;
     },
 
@@ -181,14 +174,24 @@ export const notesSlice = createSlice({
     },
 
     changeBackground: (state, action) => {
-      
-     const backgroundState = action.payload;
+      const backgroundState = action.payload;
 
-      state.backState=!backgroundState;
+      state.backState = backgroundState;
       // to update the localStorage
-      
-      window.localStorage.setItem('backState',JSON.stringify(!backgroundState));
 
+      window.localStorage.setItem('backState', JSON.stringify(backgroundState));
+    },
+
+    deletePostitsDef: (state) => {
+      const postitsDeleted = [];
+
+      // to update the localStorage
+      window.localStorage.setItem(
+        'deletedList',
+        JSON.stringify(postitsDeleted)
+      );
+      // to update the state
+      state.deletedList = postitsDeleted;
     },
   },
 });
@@ -200,6 +203,7 @@ export const {
   deleteNoteDef,
   colorChange,
   createColorsId,
-  changeBackground
+  changeBackground,
+  deletePostitsDef,
 } = notesSlice.actions;
 export default notesSlice.reducer;

@@ -2,13 +2,9 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeBackground } from  '../../redux/noteSlice';
 import pencil from '../assets/pencil.png';
-import wallDark from '../assets/wallDark.jpg';
-import wallLight from '../assets/wallLight.jpg'
-
-// import wall from '../assets/wall.png';
-
 
 export default function Header() {
+  
   // the background state has to be a global state to keep the background 
   // when the user is redirecting from the trash to the home page
   const backState = useSelector((state) => state.note.backState);
@@ -16,17 +12,10 @@ export default function Header() {
   const dispatch = useDispatch();
    
   const changeBack =()=> {
-      dispatch(changeBackground(backState));
+      dispatch(changeBackground(!backState));
   }
 
-  if (backState===true){
-    
-    document.body.style.backgroundImage = `url(${wallDark})`;
-    
-  } else{
-    
-    document.body.style.backgroundImage = `url(${wallLight})`;
-  }
+
 
   return (
     <header  className='header-display mx-auto'>
