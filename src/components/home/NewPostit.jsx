@@ -2,16 +2,14 @@
 /* eslint-disable no-return-assign */
 import { React, useState } from 'react';
 import { BiSave, BiCheckSquare } from 'react-icons/bi';
-import { MdOutlineAddBox } from 'react-icons/md/';
+
 import Swal from 'sweetalert2';
 import { useDispatch } from 'react-redux';
 import { addNote, createColorsId } from '../../redux/noteSlice';
-import CheckNote from './CheckNote';
 
 export default function NewPostit() {
   const [text, setText] = useState('');
   const [title, setTitle] = useState('');
-  const [check, setCheck] = useState(false);
   // to take only the date without the time:
   const currentDate = new Date().toLocaleDateString();
 
@@ -26,12 +24,6 @@ export default function NewPostit() {
   const titleInfo = (event) => {
     setTitle(event.target.value);
   };
-
-  const checkNote = () => {
-    setCheck(!check);
-  };
-
-  const addCheck = () => {};
 
   // To update the new note
   const saveNote = (event) => {
@@ -62,82 +54,39 @@ export default function NewPostit() {
 
   return (
     <div style={{ backgroundColor: '#F7EF99' }} className='postit-container'>
-      {!check ? (
-        <div className='postit'>
-          <textarea
-            className=' box-border flex flex-col m-0 p-2 border-b border-zinc-500 border-dashed resize-none outline-none w-full h-12 text-center text-xl font-bold font-handlee bg-transparent placeholder-zinc-400'
-            placeholder='Title...'
-            maxLength='25'
-            onChange={titleInfo}
-            value={title}
-          />
-          <textarea
-            className='note-text placeholder-zinc-400'
-            placeholder='My note...'
-            // trying to avoid the note generate the scroll bar
-            // so is more similar to how works a postit in the real life
-            maxLength='190'
-            onChange={noteInfo}
-            // to associate the state value
-            value={text}
-          />
+      <div className='postit'>
+        <textarea
+          className=' box-border flex flex-col m-0 p-2 border-b border-zinc-500 border-dashed resize-none outline-none w-full h-12 text-center text-xl font-bold font-handlee bg-transparent placeholder-zinc-400'
+          placeholder='Title...'
+          maxLength='25'
+          onChange={titleInfo}
+          value={title}
+        />
+        <textarea
+          className='note-text placeholder-zinc-400'
+          placeholder='My note...'
+          // trying to avoid the note generate the scroll bar
+          // so is more similar to how works a postit in the real life
+          maxLength='190'
+          onChange={noteInfo}
+          // to associate the state value
+          value={text}
+        />
 
-          <footer className='flex flex-row justify-between items-center pl-2 h-9'>
-            <p id='date' className='text-sm font-handlee font-medium'>
-              {currentDate}
-            </p>
-            <BiCheckSquare
-              className='cursor-pointer mr-1'
-              color='#656565'
-              size='1.9em'
-              onMouseOver={({ target }) => (target.style.color = 'black')}
-              onMouseOut={({ target }) => (target.style.color = '#656565')}
-              onClick={checkNote}
-            />
-            <BiSave
-              className='cursor-pointer mr-1'
-              color='#656565'
-              size='1.7em'
-              onMouseOver={({ target }) => (target.style.color = 'black')}
-              onMouseOut={({ target }) => (target.style.color = '#656565')}
-              onClick={saveNote}
-            />
-          </footer>
-        </div>
-      ) : (
-        <div className='postit'>
-          <textarea
-            className=' box-border flex flex-col m-0 p-2 border-b border-zinc-500 border-dashed resize-none outline-none w-full h-12 text-center text-xl font-bold font-handlee bg-transparent placeholder-zinc-400'
-            placeholder='Title...'
-            maxLength='25'
-            onChange={titleInfo}
-            value={title}
+        <footer className='flex flex-row justify-between items-center pl-2 h-9'>
+          <p id='date' className='text-sm font-handlee font-medium'>
+            {currentDate}
+          </p>
+          <BiSave
+            className='cursor-pointer mr-1'
+            color='#656565'
+            size='1.7em'
+            onMouseOver={({ target }) => (target.style.color = 'black')}
+            onMouseOut={({ target }) => (target.style.color = '#656565')}
+            onClick={saveNote}
           />
-          <CheckNote />
-
-          <footer className='flex flex-row justify-between items-center pl-2 h-9'>
-            <p id='date' className='text-sm font-handlee font-medium'>
-              {currentDate}
-            </p>
-            <MdOutlineAddBox
-              className='cursor-pointer mr-1'
-              color='#656565'
-              size='1.9em'
-              onMouseOver={({ target }) => (target.style.color = 'black')}
-              onMouseOut={({ target }) => (target.style.color = '#656565')}
-              onClick={addCheck}
-            />
-            <BiSave
-              className='cursor-pointer mr-1'
-              color='#656565'
-              size='1.7em'
-              onMouseOver={({ target }) => (target.style.color = 'black')}
-              onMouseOut={({ target }) => (target.style.color = '#656565')}
-              onClick={saveNote}
-            />
-          </footer>
-        </div>
-      )}
+        </footer>
+      </div>
     </div>
   );
 }
