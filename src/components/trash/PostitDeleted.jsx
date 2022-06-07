@@ -85,7 +85,6 @@ export default function PostitDeleted({ note, title, id, time }) {
             <Link to='/'>
               <MdOutlineRestorePage
                 className='cursor-pointer md:ml-40 '
-                // id='restore-button'
                 color='#7f7f81'
                 size='1.7em'
                 onMouseOver={({ target }) => (target.style.color = '#535354')}
@@ -96,7 +95,6 @@ export default function PostitDeleted({ note, title, id, time }) {
           ) : (
             <MdOutlineRestorePage
               className='cursor-pointer md:ml-40'
-              // id='restore-button'
               color='#7f7f81'
               size='1.7em'
               onMouseOver={({ target }) => (target.style.color = '#535354')}

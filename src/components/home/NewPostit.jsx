@@ -1,11 +1,10 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-return-assign */
-import {React,useState} from 'react';
+import { React, useState } from 'react';
 import { BiSave } from 'react-icons/bi';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import { useDispatch } from 'react-redux';
 import { addNote, createColorsId } from '../../redux/noteSlice';
-
 
 export default function NewPostit() {
   const [text, setText] = useState('');
@@ -45,10 +44,10 @@ export default function NewPostit() {
     } else {
       // using swal to make the alert prettier
       Swal.fire({
-        text:'Please enter a text in the Post-it',
-        icon:'error',
+        text: 'Please enter a text in the Post-it',
+        icon: 'error',
         confirmButtonColor: '#7A056F',
-      })
+      });
     }
   };
 
@@ -61,8 +60,7 @@ export default function NewPostit() {
           maxLength='25'
           onChange={titleInfo}
           value={title}
-          
-         />
+        />
 
         <textarea
           className='note-text placeholder-zinc-400'
@@ -73,11 +71,12 @@ export default function NewPostit() {
           onChange={noteInfo}
           // to associate the state value
           value={text}
-          
-         />
+        />
 
         <footer className='flex flex-row justify-between items-center pl-2 h-9'>
-          <p id='date' className='text-sm font-handlee font-medium'>{currentDate}</p>
+          <p id='date' className='text-sm font-handlee font-medium'>
+            {currentDate}
+          </p>
           <BiSave
             className='cursor-pointer mr-1'
             color='#656565'

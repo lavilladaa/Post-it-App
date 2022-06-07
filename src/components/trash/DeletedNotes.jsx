@@ -6,7 +6,6 @@ export default function DeletedNotes() {
   // to take only the date without the time:
 
   const deletedList = useSelector((state) => state.note.deletedList);
-  // const notesList = useSelector((state) => state.note.notesList);
 
   return (
     // To change the className when there are more than 3 notes

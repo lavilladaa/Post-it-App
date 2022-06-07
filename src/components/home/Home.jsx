@@ -4,23 +4,18 @@ import Notes from './Notes';
 import Header from './Header';
 import Footer from './Footer';
 import wallDark from '../assets/wallDark.jpg';
-import wallLight from '../assets/wallLight.jpg'
+import wallLight from '../assets/wallLight.jpg';
 
 function Home() {
   const backState = useSelector((state) => state.note.backState);
 
-  
-  if (backState===true){
-    
-    document.body.style.backgroundImage = `url(${wallDark})`;
-    
-  } else{
-    
+  if (backState === true) {
     document.body.style.backgroundImage = `url(${wallLight})`;
+  } else {
+    document.body.style.backgroundImage = `url(${wallDark})`;
   }
   return (
     <>
-     
       <Header />
       <Notes />
       <Footer />

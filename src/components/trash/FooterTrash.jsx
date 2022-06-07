@@ -22,7 +22,6 @@ export default function FooterTrash() {
         confirmButtonText: 'OK',
         cancelButtonText: 'Cancel',
       }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
           dispatch(deletePostitsDef());
           Swal.fire('The trash has been emptied', '', 'success');

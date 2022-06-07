@@ -14,9 +14,7 @@ export default function Postit({ note, title, id, time }) {
   const [editedText, setEditedText] = useState(note);
   const [editedTitle, setEditedTitle] = useState(title);
   const [editState, setEditState] = useState(false);
-  // to set the current date in the postit
-  // const currentDate = new Date().toLocaleDateString();
-  // const dateList = useSelector((state) => state.note.dateList);
+
   const colorList = useSelector((state) => state.note.colorList);
 
   const dispatch = useDispatch();
@@ -86,12 +84,6 @@ export default function Postit({ note, title, id, time }) {
       colorP = element.color;
     }
   });
-
-  // dateList.forEach((element) => {
-  //   if (element.id === id) {
-  //     datePostit = element.time;
-  //   }
-  // });
 
   return (
     <div style={{ backgroundColor: colorP }} className='postit-container'>

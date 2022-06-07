@@ -1,6 +1,5 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
-// import { toHaveFormValues } from "@testing-library/jest-dom/dist/matchers";
 
 const getInitialPostits = () => {
   const localNotesList = window.localStorage.getItem('notesList');
