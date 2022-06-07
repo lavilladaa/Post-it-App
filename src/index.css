@@ -53,7 +53,7 @@ it is necessary to define first this*/
 }
 
 .notes-list {
-  @apply grid gap-8 m-auto pl-5 pr-2.5 pb-24 grid-cols-290;
+  @apply grid gap-8 m-auto pl-5 pr-2.5 pb-10 grid-cols-290;
 }
 
 .count-outline {
@@ -88,6 +88,10 @@ it is necessary to define first this*/
   @apply mb-5;
 }
 
+.mr-date-deleted {
+  @apply mr-0;
+}
+
 /* To make the media query works in Heroku url is used the "only":*/
 @media only screen and (max-device-width: 740px) {
   .notes-list {
@@ -100,12 +104,6 @@ it is necessary to define first this*/
 
   .note-text {
     @apply box-border m-0 px-2 pt-2 pb-0 border-none outline-none w-full h-60 text-justify text-lg  font-handlee bg-transparent cursor-auto;
-  }
-
-  /* for the mobile screen the position of the footer should be always relative
-  to avoid the contact with the post-its */
-  .pos-fix {
-    @apply relative;
   }
 
   .header-display {
@@ -122,5 +120,17 @@ it is necessary to define first this*/
 
   .footer {
     @apply text-right w-full px-1 pb-2 bottom-0 mt-5;
+  }
+
+  .mr-date-deleted {
+    @apply mr-36;
+  }
+}
+
+@media only screen and (max-device-width: 1200px) {
+  /* for the mobile screen the position of the footer should be always relative
+  to avoid the contact with the post-its */
+  .pos-fix {
+    @apply relative;
   }
 }

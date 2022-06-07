@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-return-assign */
 import { React, useState } from 'react';
-import { BiSave, BiCheckSquare } from 'react-icons/bi';
+import { BiSave } from 'react-icons/bi';
 
 import Swal from 'sweetalert2';
 import { useDispatch } from 'react-redux';

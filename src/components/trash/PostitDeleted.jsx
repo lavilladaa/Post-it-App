@@ -61,7 +61,6 @@ export default function PostitDeleted({ note, title, id, time }) {
           maxLength='40'
           value={title}
           // to avoid the warning
-
           // "You provided a `value` prop to a form field without an `onChange` handler."
           readOnly
         />
@@ -76,7 +75,7 @@ export default function PostitDeleted({ note, title, id, time }) {
         />
 
         <footer className='flex flex-row justify-between items-center pl-2 h-9'>
-          <p id='date' className='text-sm font-handlee'>
+          <p id='date' className='text-sm font-handlee mr-date-deleted'>
             {time}
           </p>
           {/* to make the restore button redirect to the home page 
