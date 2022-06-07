@@ -109,7 +109,7 @@ export default function PostitDeleted({ note, title, id, time }) {
               <MdDeleteForever
                 className='cursor-pointer'
                 color='#7f7f81'
-                size='1.7em'
+                size='1.9em'
                 onMouseOver={({ target }) => (target.style.color = '#535354')}
                 onMouseOut={({ target }) => (target.style.color = '#7f7f81')}
                 onClick={deleteDef}
@@ -119,7 +119,7 @@ export default function PostitDeleted({ note, title, id, time }) {
             <MdDeleteForever
               className='cursor-pointer'
               color='#7f7f81'
-              size='1.7em'
+              size='1.9em'
               onMouseOver={({ target }) => (target.style.color = '#535354')}
               onMouseOut={({ target }) => (target.style.color = '#7f7f81')}
               onClick={deleteDef}
