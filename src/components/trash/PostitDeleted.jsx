@@ -24,6 +24,7 @@ export default function PostitDeleted({ note, title, id }) {
   const {length} = deletedList; // length = deletedList.length;
   // to take only the date without the time:
   const currentDate = new Date().toLocaleDateString();
+  
   const deleteDef = () => {
     dispatch(deleteNoteDef(id));
   };
