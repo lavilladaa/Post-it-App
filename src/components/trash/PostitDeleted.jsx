@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-return-assign */
 import React from 'react';
@@ -7,56 +8,49 @@ import { Link } from 'react-router-dom';
 import { MdOutlineRestorePage, MdDeleteForever } from 'react-icons/md';
 import { deleteNoteDef, addNote } from '../../redux/noteSlice';
 
-export default function PostitDeleted({ note, title, id }) {
+export default function PostitDeleted({ note, title, id, time }) {
   const deletedList = useSelector((state) => state.note.deletedList);
   const colorList = useSelector((state) => state.note.colorList);
   const dispatch = useDispatch();
 
   PostitDeleted.propTypes = {
-    // eslint-disable-next-line react/require-default-props
     note: PropTypes.string,
-    // eslint-disable-next-line react/require-default-props
     title: PropTypes.string,
-    // eslint-disable-next-line react/require-default-props
     id: PropTypes.number,
+    time: PropTypes.string,
   };
 
-  const {length} = deletedList; // length = deletedList.length;
+  const { length } = deletedList; // length = deletedList.length;
   // to take only the date without the time:
-  const currentDate = new Date().toLocaleDateString();
 
   const deleteDef = () => {
-  
     dispatch(deleteNoteDef(id));
-   
   };
 
   const restoreNote = () => {
     const restoredPostit = {
       note,
       title,
-      id, 
-      time: currentDate,
+      id,
+      time,
     };
     dispatch(addNote(restoredPostit));
     // to quite the note form the trash page
     dispatch(deleteNoteDef(id));
   };
 
-    // to quit the title if the user does not insert it
-    if (title === '') {
-      // eslint-disable-next-line no-param-reassign
-      title = '   ';
+  // to quit the title if the user does not insert it
+  if (title === '') {
+    // eslint-disable-next-line no-param-reassign
+    title = '   ';
   }
-  
+
   let colorP = '#D8A9C4';
   colorList.forEach((element) => {
     if (element.id === id) {
       colorP = element.color;
     }
   });
-
-
 
   return (
     <div style={{ backgroundColor: colorP }} className='postit-container'>
@@ -67,7 +61,7 @@ export default function PostitDeleted({ note, title, id }) {
           maxLength='40'
           value={title}
           // to avoid the warning
-          
+
           // "You provided a `value` prop to a form field without an `onChange` handler."
           readOnly
         />
@@ -82,7 +76,9 @@ export default function PostitDeleted({ note, title, id }) {
         />
 
         <footer className='flex flex-row justify-between items-center pl-2 h-9'>
-          <p id='date' className='text-sm font-handlee'>{currentDate}</p>
+          <p id='date' className='text-sm font-handlee'>
+            {time}
+          </p>
           {/* to make the restore button redirect to the home page 
         when there is only one post it in the trash page */}
           {length === 1 ? (
@@ -108,7 +104,7 @@ export default function PostitDeleted({ note, title, id }) {
               onClick={restoreNote}
             />
           )}
-          {length === 1? (
+          {length === 1 ? (
             <Link to='/'>
               <MdDeleteForever
                 className='cursor-pointer'

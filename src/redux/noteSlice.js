@@ -63,15 +63,15 @@ export const notesSlice = createSlice({
       // eslint-disable-next-line quotes
       // taking the notes created from the local storage:
       const notesList = window.localStorage.getItem('notesList');
-
       const postitsList = JSON.parse(notesList);
 
       // to take all the notes already created
       postitsList.push({ ...action.payload });
 
-      state.notesList.push(action.payload);
       // to update the localStorage
       window.localStorage.setItem('notesList', JSON.stringify(postitsList));
+      // state.notesList.push(action.payload);
+      state.notesList = postitsList;
     },
 
     deleteNote: (state, action) => {
@@ -91,6 +91,7 @@ export const notesSlice = createSlice({
             note: element.note,
             title: element.title,
             id: element.id,
+            time: element.time,
           });
         }
       });
@@ -113,6 +114,7 @@ export const notesSlice = createSlice({
         if (element.id === action.payload.id) {
           element.note = action.payload.note;
           element.title = action.payload.title;
+          element.time = action.payload.time;
         }
       });
       // to update the localStorage
@@ -168,7 +170,6 @@ export const notesSlice = createSlice({
       });
 
       state.colorList = colorPostits;
-
       // to update the localStorage
       window.localStorage.setItem('colorList', JSON.stringify(colorPostits));
     },

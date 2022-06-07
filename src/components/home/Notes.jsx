@@ -21,6 +21,7 @@ export default function Notes() {
           note={element.note}
           title={element.title}
           id={element.id}
+          time={element.time}
         />
       ))}
     </div>
