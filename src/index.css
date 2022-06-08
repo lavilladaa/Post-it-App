@@ -61,11 +61,7 @@ it is necessary to define first this*/
 }
 
 .postit {
-  @apply flex flex-col justify-between min-h-260 p-0;
-}
-
-.header-display {
-  @apply flex;
+  @apply flex flex-col justify-between;
 }
 
 .button-background {
@@ -76,22 +72,6 @@ it is necessary to define first this*/
   @apply text-right w-full pr-1 pb-2 bottom-0;
 }
 
-.pos-rel {
-  @apply relative;
-}
-
-.pos-fix {
-  @apply fixed;
-}
-
-.m-header-trash {
-  @apply mb-5;
-}
-
-.mr-date-deleted {
-  @apply mr-0;
-}
-
 /* To make the media query works in Heroku url is used the "only":*/
 @media only screen and (max-device-width: 768px) {
   .notes-list {
@@ -99,30 +79,10 @@ it is necessary to define first this*/
   }
 
   .postit-container {
-    @apply my-10 m-auto w-10/12 max-w-sm;
-  }
-
-  .note-text {
-    @apply box-border m-0 px-2 pt-2 pb-0 border-none outline-none w-full h-60 text-justify text-lg  font-handlee bg-transparent cursor-auto;
-  }
-
-  .header-display {
-    @apply block;
+    @apply my-10 m-auto w-290;
   }
 
   .button-background {
-    @apply mx-auto mb-4 px-2 pt-1 bg-yellow-100 hover:bg-amber-200 rounded-lg font-bold font-handlee text-black w-auto h-10 border-2 border-black;
-  }
-
-  .m-header-trash {
-    @apply mb-24;
-  }
-
-  /*.footer {
-    @apply text-right w-full px-1 pb-2 bottom-0 mt-5;
-  }*/
-
-  .mr-date-deleted {
-    @apply mr-28;
+    @apply mx-auto mb-8;
   }
 }

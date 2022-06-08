@@ -75,7 +75,7 @@ export default function PostitDeleted({ note, title, id, time }) {
         />
 
         <footer className='flex flex-row justify-between items-center pl-2 h-9'>
-          <p id='date' className='text-sm font-handlee mr-date-deleted'>
+          <p id='date' className='text-sm font-handlee mr-24 md:mr-0'>
             {time}
           </p>
           {/* to make the restore button redirect to the home page 

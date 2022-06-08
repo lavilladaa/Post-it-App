@@ -15,7 +15,7 @@ export default function Header() {
   };
 
   return (
-    <header className='header-display mx-auto'>
+    <header className='block md:flex mx-auto'>
       <h1 className='app-title p-1 mb-5 mx-auto h-20 w-full text-blue-aqua text-center font-leckerli-one text-6xl'>
         My notes
         <img
