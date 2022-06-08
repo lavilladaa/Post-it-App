@@ -23,7 +23,7 @@ React using Redux, LocalStorage, and React-Router-dom.
 - In case the last post-it on the Trash is deleted permanently or restored, by clicking the delete or restore button, the user will be redirected to the Home page.
 - On the Trash page there is a button to redirect to the Home page.
 
-## Code Style
+## Code Style :paintbrush:
 
 The application follows the airbnb style guide
 using eslint to check the file automatically with the
@@ -75,6 +75,12 @@ Start the server
   npm run start
 ```
 
-## App screen
+## App screen :pager:
 
 ![Algorithm schema](./src/components/assets/screenApp.PNG)
+
+## Contact :pouting_woman:
+
+Created by Laura Villada.
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/laura-villada-atehortua/)
