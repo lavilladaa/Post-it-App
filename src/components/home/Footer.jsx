@@ -22,7 +22,11 @@ export default function Footer() {
       {/* to know if there are any postit deleted */}
       {length > 0 ? (
         <footer
-          className={notesList.length > 3 ? 'footer pos-rel' : 'footer pos-fix'}
+          className={
+            notesList.length > 3
+              ? 'footer xl:relative'
+              : 'footer xl:fixed md:relative'
+          }
         >
           <Link to='/trash'>
             <button
@@ -37,7 +41,11 @@ export default function Footer() {
         </footer>
       ) : (
         <footer
-          className={notesList.length > 3 ? 'footer pos-rel' : 'footer pos-fix'}
+          className={
+            notesList.length > 3
+              ? 'footer xl:relative'
+              : 'footer xl:fixed md:relative'
+          }
         >
           <button
             className='border-none bg-transparent mr-3.5 cursor-pointer'

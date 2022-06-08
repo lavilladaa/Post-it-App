@@ -25,6 +25,7 @@ export default function FooterTrash() {
       if (result.isConfirmed) {
         dispatch(deletePostitsDef());
         // Swal.fire('The trash has been emptied', '', 'success');
+
         window.location = '/';
       }
     });
@@ -32,7 +33,11 @@ export default function FooterTrash() {
 
   return (
     <footer
-      className={deletedList.length > 4 ? 'footer pos-rel' : 'footer pos-fix'}
+      className={
+        deletedList.length > 4
+          ? 'footer xl:relative'
+          : 'footer xl:fixed md:relative'
+      }
     >
       <button
         className='border-none bg-transparent mr-3.5 cursor-pointer'
