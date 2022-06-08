@@ -1,4 +1,4 @@
-# Post-it notes App
+# Post-it notes App :page_facing_up: :pushpin:
 
 The post-it notes application was developed to create notes with a title and body text.
 The application has a responsive design, so it can be used on mobile devices as well. It was deployed in Heroku and is available at the link: https://postit-notes-project.herokuapp.com/
@@ -7,7 +7,7 @@ This application is the final project of the Bootcamp in Moove it (MooveCamp).
 The project applies all the tools seen in the classes like git, Git-Hub, HTML, CSS, JavaScript and
 React using Redux, LocalStorage, and React-Router-dom.
 
-## Features
+## Features :ballot_box_with_check:
 
 - The post-it can be saved without the title.
 - If the body text of the post-it is empty, an alert is shown when the save button is clicked.
@@ -29,7 +29,7 @@ The application follows the airbnb style guide
 using eslint to check the file automatically with the
 eslint-config-airbnb.
 
-## Technologies
+## Technologies :desktop_computer:
 
 ### Dependencies
 
@@ -39,7 +39,7 @@ eslint-config-airbnb.
 - [Redux Toolkit](https://redux-toolkit.js.org/): v1.8.2 To create a Slice to have all the actions and the reducers together.
 - [React Router](https://reactrouter.com/docs/en/v6): v6.3.0. To link the Home and the Trash pages.
 - [PropTypes](https://www.npmjs.com/package/prop-types): v15.8.1. To check the types of props to fill the ESLint requirements.
-- [React Icons](https://react-icons.github.io/react-icons/): v4.3.1. To the save, edit, restore and delete buttons.
+- [React Icons](https://react-icons.github.io/react-icons/): v4.3.1. For the save, edit, restore and delete buttons.
 - [sweetalert2](https://sweetalert2.github.io/): v11.4.17. To make alerts with styling.
 
 ### Dev Dependencies
@@ -49,7 +49,7 @@ eslint-config-airbnb.
 - [Babel](https://www.npmjs.com/package/@babel/core): v7.18.2. To transpile the JS code for the browser.
 - [tailwindcss](https://tailwindcss.com/docs/guides/create-react-app): v3.0.24. To make the CSS styling
 
-## Run Locally
+## Run Locally :arrow_forward:
 
 Clone the project
 
