@@ -28,6 +28,7 @@ export default function FooterTrash() {
         }
       });
     } else {
+      dispatch(deletePostitsDef());
       Swal.fire('The trash has been emptied', '', 'success');
     }
   };
@@ -36,17 +37,7 @@ export default function FooterTrash() {
     <footer
       className={deletedList.length > 4 ? 'footer pos-rel' : 'footer pos-fix'}
     >
-      {deletedList.length === 1 ? (
-        <Link to='/'>
-          <button
-            className='border-none bg-transparent mr-3.5 cursor-pointer'
-            type='button'
-            onClick={deleteAllPostits}
-          >
-            <img src={deleteForever} width='70px' alt='Home Icon' />
-          </button>
-        </Link>
-      ) : (
+      <Link to='/'>
         <button
           className='border-none bg-transparent mr-3.5 cursor-pointer'
           type='button'
@@ -54,8 +45,7 @@ export default function FooterTrash() {
         >
           <img src={deleteForever} width='70px' alt='Home Icon' />
         </button>
-      )}
-
+      </Link>
       <Link to='/'>
         <button
           className='border-none bg-transparent mr-3.5 cursor-pointer'
