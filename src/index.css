@@ -126,7 +126,6 @@ it is necessary to define first this*/
     @apply mr-28;
   }
 }
-
 @media only screen and (max-device-width: 1200px) {
   /* for the mobile screen the position of the footer should be always relative
   to avoid the contact with the post-its */
