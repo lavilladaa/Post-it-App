@@ -123,7 +123,7 @@ it is necessary to define first this*/
   }
 
   .mr-date-deleted {
-    @apply mr-36;
+    @apply mr-28;
   }
 }
 
