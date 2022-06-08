@@ -4,29 +4,40 @@
         "commonjs": true,
         "es2021": true
     },
-    "extends": ["airbnb", "prettier"],
-    // "parserOptions": {
-
-    // },
+    "extends": [
+        "airbnb",
+        "prettier"
+    ],
     "plugins": [
-        "react", "prettier"
+        "react",
+        "prettier",
+        "jsx-a11y",
+        "import"
     ],
     "rules": {
-        "no-unused-vars":"warn",
-        "prettier/prettier":"off",
-        "no-alert":"off",
-        "quotes": [2, "single", { "avoidEscape": true }]
-        
+        "no-unused-vars": "warn",
+        "prettier/prettier": "off",
+        "no-alert": "off",
+        "quotes": [
+            2,
+            "single",
+            {
+                "avoidEscape": true
+            }
+        ],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ]
     },
-
     "parserOptions": {
         "sourceType": "module",
         "allowImportExportEverywhere": true
-      //   "ecmaFeatures": {
-      //     "jsx": true
-      // },
-      // "ecmaVersion": "latest"
-      }
-
-    
+    }
 }

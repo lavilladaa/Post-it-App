@@ -14,9 +14,7 @@ module.exports = {
     maxHeight: {
       260: '260px',
     },
-    // minWidth: {
-    //   290: '290px',
-    // },
+
     extend: {
       colors: {
         'blue-aqua': '#48CACF',
@@ -24,8 +22,8 @@ module.exports = {
       },
       fontFamily: {
         'leckerli-one': ['Leckerli One', 'cursive'],
-        handlee: ['handlee', 'cursive'],
-        chango: ['chango', 'cursive'],
+        'handlee': ['handlee', 'cursive'],
+        'chango': ['chango', 'cursive'],
       },
       rotate: {
         30: '30deg',

@@ -8,17 +8,13 @@ export default function Notes() {
   const notesList = useSelector((state) => state.note.notesList);
 
   return (
-    // To change the className when there are more than 3 notes
-    // so the align content change from left to center
-    <div
-      className={
-        notesList.length >= 3 ? 'notes-list  justify-center' : 'notes-list'
-      }
-    >
+    /* to change the className when there are more than 3 notes (including the NewPost-it element)
+    so the align content change from left to center */
+    <div className={notesList.length >= 3 ? 'notes-list  justify-center' : 'notes-list'}>
       <NewPostit />
 
       {/* to render all the notes created */}
-
+    
       {notesList.map((element) => (
         <Postit
           key={element.id}

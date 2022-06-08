@@ -15,11 +15,9 @@ const getInitialPostits = () => {
 const getDeletedPostits = () => {
   const localDeletedList = window.localStorage.getItem('deletedList');
   if (localDeletedList) {
-    // to parse the notes list if there is one in the localStorage
-
-    return JSON.parse(localDeletedList);
+     return JSON.parse(localDeletedList);
   }
-  // If there are no notes so it has to be created a empty array
+  // If there are no notes deleted  so it has to be created a empty array
   window.localStorage.setItem('deletedList', JSON.stringify([]));
   return [];
 };
@@ -27,11 +25,9 @@ const getDeletedPostits = () => {
 const getColorPostit = () => {
   const localColorList = window.localStorage.getItem('colorList');
   if (localColorList) {
-    // to parse the notes list if there is one in the localStorage
-
     return JSON.parse(localColorList);
   }
-  // If there are no notes so it has to be created a empty array
+  // If there are no colors so it has to be created a empty array
   window.localStorage.setItem('colorList', JSON.stringify([]));
   return [];
 };
@@ -41,13 +37,13 @@ const getBackState = () => {
   if (localBackState) {
     return JSON.parse(localBackState);
   }
-
+  // to take the "wallLight" background in the first render of the app
   window.localStorage.setItem('backState', JSON.stringify(false));
   return false;
 };
 
 const initialList = {
-  // creating a function to obtain the initial postits from the local storage.
+  // creating a function to obtain the initial states values
   notesList: getInitialPostits(),
   deletedList: getDeletedPostits(),
   colorList: getColorPostit(),
@@ -69,6 +65,7 @@ export const notesSlice = createSlice({
 
       // to update the localStorage
       window.localStorage.setItem('notesList', JSON.stringify(postitsList));
+
       // state.notesList.push(action.payload);
       state.notesList = postitsList;
     },
@@ -81,11 +78,11 @@ export const notesSlice = createSlice({
 
       postitsList.forEach((element, index) => {
         if (element.id === action.payload) {
-          // to take the note out of the array.
-          // the second argument is the amount of elements to take out.
+          /* to take the note out of the array.
+          the second argument is the amount of elements to take out. */
           postitsList.splice(index, 1);
 
-          // to save the deleted postit and render it in the trash page.
+          // to save the deleted postit and render it in the Trash page.
           postitsDeleted.push({
             note: element.note,
             title: element.title,
@@ -96,10 +93,7 @@ export const notesSlice = createSlice({
       });
       // to update the localStorage
       window.localStorage.setItem('notesList', JSON.stringify(postitsList));
-      window.localStorage.setItem(
-        'deletedList',
-        JSON.stringify(postitsDeleted)
-      );
+      window.localStorage.setItem('deletedList', JSON.stringify(postitsDeleted));
 
       // to update the state
       state.notesList = postitsList;
@@ -109,6 +103,8 @@ export const notesSlice = createSlice({
     editNote: (state, action) => {
       const noteList = window.localStorage.getItem('notesList');
       const postitsList = JSON.parse(noteList);
+
+      // replacing the new note values
       postitsList.forEach((element) => {
         if (element.id === action.payload.id) {
           element.note = action.payload.note;
@@ -128,36 +124,32 @@ export const notesSlice = createSlice({
 
       postitsDeleted.forEach((element, index) => {
         if (element.id === action.payload) {
-          // to take the note out of the array.
-          // the second argument is the amount of elements to take out.
           postitsDeleted.splice(index, 1);
         }
       });
+
       // to update the localStorage
-      window.localStorage.setItem(
-        'deletedList',
-        JSON.stringify(postitsDeleted)
-      );
+      window.localStorage.setItem('deletedList', JSON.stringify(postitsDeleted));
 
       // to update the state
       state.deletedList = postitsDeleted;
     },
 
     createColorsId: (state, action) => {
-      // taking the notes created:
+
+      // taking the colors selected:
       const colorList = window.localStorage.getItem('colorList');
       const colorPostits = JSON.parse(colorList);
 
       colorPostits.push({ ...action.payload });
       state.colorList.push(action.payload);
 
-      // state.colorList = colorPostits;
-
       // to update the localStorage
       window.localStorage.setItem('colorList', JSON.stringify(colorPostits));
     },
 
     colorChange: (state, action) => {
+
       // taking the notes created:
       const colorList = window.localStorage.getItem('colorList');
       const colorPostits = JSON.parse(colorList);
@@ -169,6 +161,7 @@ export const notesSlice = createSlice({
       });
 
       state.colorList = colorPostits;
+
       // to update the localStorage
       window.localStorage.setItem('colorList', JSON.stringify(colorPostits));
     },
@@ -177,8 +170,8 @@ export const notesSlice = createSlice({
       const backgroundState = action.payload;
 
       state.backState = backgroundState;
-      // to update the localStorage
 
+      // to update the localStorage
       window.localStorage.setItem('backState', JSON.stringify(backgroundState));
     },
 
@@ -186,10 +179,7 @@ export const notesSlice = createSlice({
       const postitsDeleted = [];
 
       // to update the localStorage
-      window.localStorage.setItem(
-        'deletedList',
-        JSON.stringify(postitsDeleted)
-      );
+      window.localStorage.setItem('deletedList', JSON.stringify(postitsDeleted));
       // to update the state
       state.deletedList = postitsDeleted;
     },

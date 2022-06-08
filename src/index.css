@@ -9,7 +9,6 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  /* background-image: url("./components/assets/wallLight.jpg"); */
   background-repeat: round;
 }
 
@@ -21,11 +20,11 @@ body {
 /* to customize the title and text style */
 
 .note-title {
-  @apply box-border flex flex-col m-0 p-2 border-b border-zinc-500 border-dashed resize-none outline-none w-full h-12 text-center text-xl font-bold font-handlee bg-transparent;
+  @apply box-border flex flex-col resize-none outline-none m-0 p-2 w-full h-12 border-b border-zinc-500 border-dashed text-center text-xl font-bold font-handlee bg-transparent;
 }
 
 .note-text {
-  @apply box-border flex flex-col m-0 px-2 pt-2 pb-0 border-none resize-none outline-none w-full h-48 text-justify text-lg  font-handlee bg-transparent cursor-auto;
+  @apply box-border flex flex-col resize-none outline-none m-0 px-2 pt-2 pb-0 w-full h-48 border-none text-justify text-lg  font-handlee bg-transparent cursor-auto;
 }
 
 /* To style the scroll bar */

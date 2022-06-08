@@ -4,9 +4,11 @@ import { useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 import trash from '../assets/trash.png';
 
+
 export default function Footer() {
   const deletedList = useSelector((state) => state.note.deletedList);
   const notesList = useSelector((state) => state.note.notesList);
+  
   const { length } = deletedList;
 
   const alertTrash = () => {
@@ -19,20 +21,15 @@ export default function Footer() {
 
   return (
     <>
-      {/* to know if there are any postit deleted */}
+      {/* to know if there are any postit deleted and redirect the user to the Trash page */}
       {length > 0 ? (
-        <footer
-          className={
-            notesList.length > 3
-              ? 'footer xl:relative'
-              : 'footer xl:fixed md:relative'
-          }
-        >
+        <footer className={notesList.length > 3 ? 'footer xl:relative': 'footer xl:fixed md:relative'}>
           <Link to='/trash'>
             <button
               className='bg-transparent border-none mb-0 mr-2 bg-bin-full bg-cover h-85 w-85 justify-center items-center cursor-pointer'
               type='button'
             >
+              {/* showing the number of Post-its deleted on the Trash Icon */}
               <div className='count-outline bg-transparent w-8 mx-auto mt-5 p-0 text-2xl font-bold font-chango text-purple-count'>
                 {length}
               </div>
@@ -40,13 +37,7 @@ export default function Footer() {
           </Link>
         </footer>
       ) : (
-        <footer
-          className={
-            notesList.length > 3
-              ? 'footer xl:relative'
-              : 'footer xl:fixed md:relative'
-          }
-        >
+        <footer className={notesList.length > 3 ? 'footer xl:relative': 'footer xl:fixed md:relative'}>
           <button
             className='border-none bg-transparent mr-3.5 cursor-pointer'
             onClick={alertTrash}

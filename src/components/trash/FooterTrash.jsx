@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
+import { useDispatch, useSelector } from 'react-redux';
 import { deletePostitsDef } from '../../redux/noteSlice';
-
 import home from '../assets/home.png';
 import deleteForever from '../assets/deleteForever.png';
 
@@ -13,7 +11,7 @@ export default function FooterTrash() {
 
   const dispatch = useDispatch();
 
-  const deleteAllPostits = () => {
+  const deleteAllPostits = () => {    
     Swal.fire({
       text: 'Are you sure you want to delete all the Post-its?',
       icon: 'question',
@@ -24,21 +22,15 @@ export default function FooterTrash() {
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(deletePostitsDef());
-        // Swal.fire('The trash has been emptied', '', 'success');
-
+        // when the post-its are deleted permanently the use is redirecting to the Home page.
         window.location = '/';
       }
     });
   };
 
   return (
-    <footer
-      className={
-        deletedList.length > 4
-          ? 'footer xl:relative'
-          : 'footer xl:fixed md:relative'
-      }
-    >
+    // the position of the footer depends on the screen size:
+    <footer className={deletedList.length > 4 ? 'footer xl:relative' : 'footer xl:fixed md:relative'}>
       <button
         className='border-none bg-transparent mr-3.5 cursor-pointer'
         type='button'

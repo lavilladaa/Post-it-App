@@ -1,24 +1,29 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-return-assign */
-/* eslint-disable react/require-default-props */
 import { React, useState } from 'react';
 import { PropTypes } from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
 import { RiDeleteBin5Line } from 'react-icons/ri';
 import { FaEdit } from 'react-icons/fa';
 import { BiSave } from 'react-icons/bi';
+import { useDispatch, useSelector } from 'react-redux';
 import { deleteNote, colorChange, editNote } from '../../redux/noteSlice';
 
+
 export default function Postit({ note, title, id, time }) {
-  // In the initial value of the states is taken the original value in the postit.
+  // In the initial value of the states is taken the stored value in the postit.
   const [editedText, setEditedText] = useState(note);
   const [editedTitle, setEditedTitle] = useState(title);
+
+  // to know what kind of post-it has to be rendered:
   const [editState, setEditState] = useState(false);
 
+  // the colors from the global state taken from the localStorage:
   const colorList = useSelector((state) => state.note.colorList);
 
   const dispatch = useDispatch();
 
+  // ESLint requirement for the types of the props:
   Postit.propTypes = {
     note: PropTypes.string,
     title: PropTypes.string,
@@ -31,6 +36,7 @@ export default function Postit({ note, title, id, time }) {
     setEditedTitle(event.target.value);
   };
 
+  // taking the new text when the note is edited
   const noteNew = (event) => {
     setEditedText(event.target.value);
   };
@@ -42,20 +48,22 @@ export default function Postit({ note, title, id, time }) {
 
   const saveNew = (event) => {
     if (editedText.trim() !== '') {
+
       // to prevent the website refresh
       event.preventDefault();
 
       const editedPostit = {
         note: editedText,
         title: editedTitle,
-        id, // id: id, (object-shorthand)
+        // id: id, (object-shorthand)
+        id, 
         // to update the date when the post-it is edited
         time: new Date().toLocaleDateString(),
       };
 
       dispatch(editNote(editedPostit));
 
-      // to render the original format note editState is updated to false
+      // to render the original format post-it, editState is updated to false
       setEditState(false);
     }
   };
@@ -66,19 +74,22 @@ export default function Postit({ note, title, id, time }) {
   };
 
   const colorFun = () => {
-    // to take the input color of each postit
-    // is taken the id of the postit in the id of the color input
+    /* to take the input color of each postit
+    is taken the id of the postit in the id of the color input */
     const color = document.getElementById(id).value;
+
     dispatch(colorChange({ id, color }));
   };
 
-  // to quit the title if the user does not insert it
+  // to rid off the title if the user does not insert it
   if (title === '') {
-    // eslint-disable-next-line no-param-reassign
     title = '   ';
   }
+
+  // the default color when the post-it is created is set to yellow
   let colorP = '#D8A9C4';
 
+  // taking the colors of the post-its already created
   colorList.forEach((element) => {
     if (element.id === id) {
       colorP = element.color;
@@ -87,6 +98,7 @@ export default function Postit({ note, title, id, time }) {
 
   return (
     <div style={{ backgroundColor: colorP }} className='postit-container'>
+
       {/* In case the mode edit is off, should render the original format postit */}
       {!editState ? (
         <div className='postit'>
@@ -97,15 +109,15 @@ export default function Postit({ note, title, id, time }) {
             // to take the title from the NewPostit component.
             value={title}
             onChange={titleNew}
-            // to avoid the warning
-            // "You provided a `value` prop to a form field without an `onChange` handler."
+            /* "readOnly" is used to avoid the warning:
+            "You provided a `value` prop to a form field without an `onChange` handler." */
             readOnly
           />
 
           <textarea
             className='note-text'
             placeholder='My note...'
-            maxLength='10'
+            maxLength='190'
             // to take the note text from the NewPostit component.
             value={note}
             onChange={noteNew}
@@ -119,20 +131,31 @@ export default function Postit({ note, title, id, time }) {
             <input
               type='color'
               className='w-12 h-5 p-0 md:ml-24 bg-stone-400 rounded border border-black cursor-pointer'
+              // showing a list of colors presets
               list='defaultColors'
+              /*  the same id as the id in the post-it, so when is deleted 
+              keeps the set color when was in the home page */
               id={id}
               onChange={colorFun}
               value={colorP}
             />
             <datalist id='defaultColors'>
-              <option>#F7EF99</option> {/* yellow */}
-              <option>#D8A9C4</option> {/* purple */}
-              <option>#93E1D8</option> {/* blue */}
-              <option>#BBEB9C</option> {/* green */}
-              <option>#FEC18B</option> {/* orange */}
-              <option>#EFAAC0</option> {/* pink */}
-              <option>#D1EAF9</option> {/* light blue */}
-              <option>#C0C0C0</option> {/* gray */}
+              {/* yellow */}
+              <option>#F7EF99</option> 
+              {/* purple */}
+              <option>#D8A9C4</option> 
+              {/* blue */}
+              <option>#93E1D8</option> 
+              {/* green */}
+              <option>#BBEB9C</option> 
+              {/* orange */}
+              <option>#FEC18B</option> 
+              {/* pink */}
+              <option>#EFAAC0</option> 
+              {/* light blue */}
+              <option>#D1EAF9</option> 
+              {/* gray */}
+              <option>#C0C0C0</option> 
             </datalist>
             <FaEdit
               className='cursor-pointer ml-2.5 '

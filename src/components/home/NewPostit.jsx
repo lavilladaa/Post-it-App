@@ -2,7 +2,6 @@
 /* eslint-disable no-return-assign */
 import { React, useState } from 'react';
 import { BiSave } from 'react-icons/bi';
-
 import Swal from 'sweetalert2';
 import { useDispatch } from 'react-redux';
 import { addNote, createColorsId } from '../../redux/noteSlice';
@@ -10,6 +9,7 @@ import { addNote, createColorsId } from '../../redux/noteSlice';
 export default function NewPostit() {
   const [text, setText] = useState('');
   const [title, setTitle] = useState('');
+
   // to take only the date without the time:
   const currentDate = new Date().toLocaleDateString();
 
@@ -32,18 +32,22 @@ export default function NewPostit() {
       event.preventDefault();
       const newPostit = {
         note: text,
-        title, // title: title, (object-shorthand)
-        id: Math.random(), // to generate a unique id
+        // title: title, (object-shorthand)
+        title, 
+        // to generate a unique id
+        id: Math.random(), 
         time: currentDate,
       };
 
       dispatch(addNote(newPostit));
       dispatch(createColorsId({ id: newPostit.id, color: '#F7EF99' }));
+
       // to reset the note
       setText('');
       setTitle('');
+
     } else {
-      // using swal to make the alert prettier
+      // Using swal to make the alert prettier
       Swal.fire({
         text: 'Please enter a text in the Post-it',
         icon: 'error',
@@ -56,8 +60,9 @@ export default function NewPostit() {
     <div style={{ backgroundColor: '#F7EF99' }} className='postit-container'>
       <div className='postit'>
         <textarea
-          className=' box-border flex flex-col m-0 p-2 border-b border-zinc-500 border-dashed resize-none outline-none w-full h-12 text-center text-xl font-bold font-handlee bg-transparent placeholder-zinc-400'
+          className='note-title placeholder-zinc-400'
           placeholder='Title...'
+          // limiting the number of characters for the title
           maxLength='25'
           onChange={titleInfo}
           value={title}
@@ -65,8 +70,8 @@ export default function NewPostit() {
         <textarea
           className='note-text placeholder-zinc-400'
           placeholder='My note...'
-          // trying to avoid the note generate the scroll bar
-          // so is more similar to how works a postit in the real life
+          /* Limiting the number of characters trying to avoid the note generate the scroll bar,
+          so is more similar to how works a postit in the real life */
           maxLength='190'
           onChange={noteInfo}
           // to associate the state value
@@ -81,6 +86,7 @@ export default function NewPostit() {
             className='cursor-pointer mr-1'
             color='#656565'
             size='1.7em'
+            // For react icons the hover is set like this:
             onMouseOver={({ target }) => (target.style.color = 'black')}
             onMouseOut={({ target }) => (target.style.color = '#656565')}
             onClick={saveNote}
