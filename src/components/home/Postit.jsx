@@ -117,7 +117,7 @@ export default function Postit({ note, title, id, time }) {
           <textarea
             className='note-text'
             placeholder='My note...'
-            maxLength='190'
+            maxLength='200'
             // to take the note text from the NewPostit component.
             value={note}
             onChange={noteNew}
@@ -154,8 +154,8 @@ export default function Postit({ note, title, id, time }) {
               <option>#EFAAC0</option> 
               {/* light blue */}
               <option>#D1EAF9</option> 
-              {/* gray */}
-              <option>#C0C0C0</option> 
+              {/* white */}
+              <option>#FEF9C7</option> 
             </datalist>
             <FaEdit
               className='cursor-pointer ml-2.5 '
@@ -191,7 +191,7 @@ export default function Postit({ note, title, id, time }) {
           <textarea
             className='note-text'
             placeholder='My note...'
-            maxLength='190'
+            maxLength='200'
             onChange={noteNew}
             // to set the edited text in the note
             value={editedText}

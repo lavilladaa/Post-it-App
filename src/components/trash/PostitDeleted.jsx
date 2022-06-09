@@ -75,7 +75,7 @@ export default function PostitDeleted({ note, title, id, time }) {
         <textarea
           className='note-text'
           placeholder='My note...'
-          maxLength='190'
+          maxLength='200'
           // to associate the state value
           value={note}
           readOnly

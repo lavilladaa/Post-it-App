@@ -72,7 +72,7 @@ export default function NewPostit() {
           placeholder='My note...'
           /* Limiting the number of characters trying to avoid the note generate the scroll bar,
           so is more similar to how works a postit in the real life */
-          maxLength='190'
+          maxLength='200'
           onChange={noteInfo}
           // to associate the state value
           value={text}
