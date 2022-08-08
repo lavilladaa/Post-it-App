@@ -130,7 +130,7 @@ export default function Postit({ note, title, id, time }) {
             </p>
             <input
               type='color'
-              className='w-12 h-5 p-0 md:ml-24 bg-stone-400 rounded border border-black cursor-pointer'
+              className='w-12 h-5 p-0 ml-3 md:ml-15 bg-stone-400 rounded border border-black cursor-pointer'
               // showing a list of colors presets
               list='defaultColors'
               /*  the same id as the id in the post-it, so when is deleted 
@@ -158,7 +158,7 @@ export default function Postit({ note, title, id, time }) {
               <option>#FEF9C7</option> 
             </datalist>
             <FaEdit
-              className='cursor-pointer ml-2.5 '
+              className='cursor-pointer'
               size='1.6em'
               color='#656565'
               onMouseOver={({ target }) => (target.style.color = 'black')}
